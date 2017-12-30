@@ -8,19 +8,79 @@
     <link rel="stylesheet" href="css/theme/sky.css">
     <script src="lib/js/html5shiv.js"></script>
     <title>CMPT 165</title>
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <style>
+        .titillium {
+            font-family: 'Titillium Web', sans-serif;
+        }
+        .zui-table {
+            border: solid 1px #DDEEEE;
+            border-collapse: collapse;
+            border-spacing: 0;
+            font: normal 13px Arial, sans-serif;
+        }
+        .zui-table thead th {
+            background-color: #DDEFEF;
+            border: solid 1px #DDEEEE;
+            color: #336B6B;
+            padding: 10px;
+            text-align: left;
+            text-shadow: 1px 1px 1px #fff;
+        }
+        .zui-table tbody td {
+            border: solid 1px #DDEEEE;
+            color: #333;
+            padding: 10px;
+            text-shadow: 1px 1px 1px #fff;
+        }
+        .zui-table-rounded {
+            border: none;
+        }
+        .zui-table-rounded thead th {
+            background-color: lightgray;
+            border: none;
+            text-shadow: 1px 1px 1px #ccc;
+            color: #333;
+        }
+        .zui-table-rounded thead th:first-child {
+            border-radius: 10px 0 0 0;
+        }
+        .zui-table-rounded thead th:last-child {
+            border-radius: 0 10px 0 0;
+        }
+        .zui-table-rounded tbody td {
+            border: none;
+            border-top: solid 1px #957030;
+            background-color: whitesmoke;
+        }
+        .zui-table-rounded tbody tr:last-child td:first-child {
+            border-radius: 0 0 0 10px;
+        }
+        .zui-table-rounded tbody tr:last-child td:last-child {
+            border-radius: 0 0 10px 0;
+        }
+    </style>
 </head>
-<body style="overflow: scroll">
-<h1 style="text-align: center">TENTATIVE SCHEDULE</h1>
-<div class="reveal" style="overflow: visible">
+<body style="overflow-y: scroll">
+<div style="position: fixed;top:0">
+    <img src="img/logo.png" alt="SFU Logo" style="width:30%;opacity: 0.5;">
+    <img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/main-desktop-browser-logos.png"
+         alt="Browsers Logos" style="width:25%;opacity: 0.5;float: right;filter: grayscale(100%);">
+</div>
+<div>
+    <h1 style="text-align: center;width: 40%;margin: 0 auto;float: none;" class="titillium">TENTATIVE SCHEDULE</h1>
+</div>
+<div class="reveal titillium" style="overflow-y: visible">
     <div style="margin: 5% 10%; font-size: large; ">
         <section>
-            <table class="sborder" border="1">
+            <table class="zui-table zui-table-rounded">
                 <thead>
                     <tr>
                         <th>Week</th>
                         <th>Lecture Date</th>
                         <th>Topic</th>
                         <th>Coursework</th>
+                        <th>PDF Version</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -30,6 +90,7 @@
                         <td style="vertical-align: text-top;">
                             <a href="session1.html">Course Introduction</a></td>
                         <td></td>
+                        <td><a href="session1.html?print-pdf">Download</a></td>
                     </tr>
                     <!--<tr>
                         <td>Fri, Jan 9</td>
@@ -281,9 +342,6 @@
 <script src="js/reveal.js"></script>
 <script>
     Reveal.initialize({
-        controls: true,
-        progress: true,
-        history: true,
         center: true,
         transition: 'none',
         dependencies: [
