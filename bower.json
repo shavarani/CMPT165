@@ -1,0 +1,27 @@
+{
+  "name": "CMPT165ClassPresentations",
+  "version": "1.0.0",
+  "main": [
+    "js/reveal.js",
+    "css/reveal.css"
+  ],
+  "homepage": "https://coursys.sfu.ca/2018sp-cmpt-165-d3/pages/",
+  "license": "MIT",
+  "description": "CMPT 165; Introduction to Internet and World Wide Web",
+  "authors": [
+    "Hassan S. Shavarani <sshavara@sfu.ca>"
+  ],
+  "dependencies": {
+    "headjs": "~1.0.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hakimel/reveal.js.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test"
+  ]
+}
