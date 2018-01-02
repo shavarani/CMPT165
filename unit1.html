@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>CMPT 165 | Unit 1</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/sky.css">
@@ -61,13 +61,113 @@
 					</ol>
 				</section>
 				<section>
-					<h3 style="border-bottom: 1px solid gray">Topics</h3>
-					You probably know what <b>the Internet</b> is, at least somewhat
+					<section>
+						<h3 style="border-bottom: 1px solid gray">The Internet</h3>
+						<div class="fragment semi-fade-out">Question: what is <b>the Internet</b>?</div>
+						<div class="fragment">A number of computers connected to each other</div>
+					</section>
+					<section>
+						<h3 style="border-bottom: 1px solid gray">How Computers Are Connected</h3>
+						<h5>Network Connections At Home</h5>
+						<p style="float: left"><b>Ethernet</b></p>
+						<ul>
+							<li>short distances (up to 100 metres)</li>
+							<li>high speeds (up to 100 or 1000 Mbits/s)</li>
+						</ul>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Ethernet_Connection.jpg" alt="Ethernet Connection" width="300">
+						<small>* image from https://en.wikipedia.org/wiki/File:Ethernet_Connection.jpg</small>
+					</section>
+					<section>
+						<h3 style="border-bottom: 1px solid gray">How Computers Are Connected</h3>
+						<h5>Network Connections At Home</h5>
+						<p style="float: left"><b>WiFi (802.11 LAN Standard)</b></p>
+						<ul>
+							<li>uses radio waves to transmit information</li>
+							<li>relatively short distances (up to 100 metres, depending on the number of walls on the way)</li>
+							<li>relatively high speeds (up to 54 Mbits/s or even 150 Mbits/s, but usually less)</li>
+						</ul>
+					</section>
+					<section>
+						<h3 style="border-bottom: 1px solid gray">How Computers Are Connected</h3>
+						<h5>Connections from Home to the Internet</h5>
+						<p style="float: left"><b>Router</b></p>
+						<ul>
+							<li>
+								<small>a computer with a specific responsibility to connect home computers to the computers outside home usually over a wired Ethernet connection</small>
+							</li>
+						</ul>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Router_1.jpg" alt="Router" width="300">
+						<small>* image from https://commons.wikimedia.org/wiki/File:Router_1.jpg</small>
+					</section>
+					<section>
+						<h3 style="border-bottom: 1px solid gray">How Computers Are Connected</h3>
+						<h5>Connections from Home to the Internet</h5>
+						<p style="float: left"><b>Internet Service Provider (ISP)</b></p>
+						<ul>
+							<li>a home router (or a home computer without a router) is connected to the outside Internet using ISP</li>
+							<li>this is the part that costs money</li>
+						</ul>
+					</section>
+					<section>
+						<h3 style="border-bottom: 1px solid gray">How Computers Are Connected</h3>
+						<h5>Connections from Home to the Internet</h5>
+						<p style="float: left"><b>Modem</b></p>
+						<ul>
+							<li><b>Cable Modem</b></li>
+							<li><b>DSL (Digital Subscriber Line) Modem</b></li>
+						</ul>
+					</section>
+					<section>
+						<h3 style="border-bottom: 1px solid gray">How Computers Are Connected</h3>
+						<h5>Mobile Internet</h5>
+						<p>Modern mobile phones can sent Internet data to and from the tower they are connected to wirelessly</p>
+						<ul style="float: left;">
+                        	<li>slowest to fastest technologies: </li>
+							<ul>
+								<li>GSM, EDGE, 3G, HSPA, LTE</li>
+							</ul>
+							<li>possible communication approaches: </li>
+							<ul>
+								<li>Wi-Fi (when it's available)</li>
+								<li>the mobile network</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h3 style="border-bottom: 1px solid gray">How Computers Are Connected</h3>
+						<h5>Internet Infrastructure</h5>
+						<ul style="float: left;margin: 0;width: 79%;">
+							<li><b>The Goal</b>: send lots of data quickly over long distances (across the planet)</li>
+							<li><b>Medium</b>: Fibre Optic</li>
+							<ul>
+								<li>cables using long strands of glass or plastic to transmit light pulses that are used to encode data</li>
+								<li>they can transmit incredible amounts of data and over very long distances (up to 100 km without any amplifiers)</li>
+							</ul>
+						</ul>
+						<div style="width: 20%;position: absolute;right: 0;">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Fibreoptic.jpg" alt="Fibre Optic" width="300">
+							<small style="font-size:0.3em;word-wrap: break-word;width: 100%;">* image from https://commons.wikimedia.org/wiki/File:Fibreoptic.jpg</small>
+						</div>
+					</section>
+					<section>
+						<h3 style="border-bottom: 1px solid gray">How Information Travels</h3>
+						<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/internet.svg" alt="Internet" width="900">
+						<small style="font-size: 0.5em">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/internet.svg</small>
+						<aside class="notes">
+							<ul>
+								<li>networks A-D and E-H are home networks</li>
+								<li>not every thing in a network is necessarily going to be a laptop or PC,
+									things like phones and printers could be computers in the network</li>
+								<li>the routers are connected to every thing in a network and they have multiple links</li>
+								<li>there can be multiple connections between different paths to send one piece of information</li>
+								<li>the concept of multiple links is to support <b>fault tolerance</b></li>
+								<li>the actual Internet is much bigger than this figure (15-20 hops between end points)</li>
 
-					But there are more details to what “the Internet” is than most people know about. It makes sense to start with a little bit of an introduction into what the Internet actually is.
-
-					Fundamentally, the Internet is a collection of computer that are connected: they can exchange information. Every computer “on the Internet” is connected to one or more other computers. There are many ways to connect
+							</ul>
+						</aside>
+					</section>
 				</section>
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
 			</div>
 		</div>
 
