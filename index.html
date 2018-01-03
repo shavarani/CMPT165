@@ -59,15 +59,20 @@
         .zui-table-rounded tbody tr:last-child td:last-child {
             border-radius: 0 0 10px 0;
         }
+        td {
+            text-align: center !important;
+            vertical-align: middle !important;
+        }
     </style>
 </head>
 <body style="overflow-y: scroll">
 <div class="reveal titillium" style="overflow-y: visible">
     <div>
-        <h6 style="text-align: center;width: 40%;margin: 0 auto;float: none;padding-top: 10%" class="titillium">TENTATIVE SCHEDULE</h6>
+        <h6 style="text-align: center;width: 40%;margin: 0 auto;float: none;padding-top: 10%; min-width: 185px" class="titillium">TENTATIVE SCHEDULE</h6>
     </div>
-    <div style="margin: 5% 10%; font-size: large; ">
+    <div style="margin: 5%; font-size: large; overflow: visible">
         <section>
+            <div style="min-height: 500px">
             <table class="zui-table zui-table-rounded">
                 <thead>
                     <tr>
@@ -80,14 +85,21 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td rowspan="2" style="text-align: center; vertical-align: middle">1</td>
-                        <td>Wed, Jan 3</td>
-                        <td style="vertical-align: text-top;">
-                            <a href="unit0.html">Course Introduction</a></td>
-                        <td>-</td>
-                        <td><a href="slides/unit0.pdf">Download</a></td>
+                        <td rowspan="2">1</td>
+                        <td rowspan="2">Wed, Jan 3</td>
+                        <td>
+                            <a href="unit0.html">Course Introduction</a><br>
+                            <hr/>
+                            <a href="unit1-1.html">The Internet</a>
+                        </td>
+                        <td rowspan="2">-</td>
+                        <td>
+                            <a href="slides/unit0.pdf">Download</a><br>
+                            <hr/>
+                            <a href="slides/unit1-1.pdf">Download</a><br>
+                        </td>
                     </tr>
-                    <tr>
+                    <!--<tr>
                         <td>Fri, Jan 5</td>
                         <td style="vertical-align: text-top;">
                             <a href="unit1.html">Unit 1: The World Wide Web (WWW)</a><br>
@@ -331,7 +343,8 @@
                     </tr>-->
                 </tbody>
             </table>
-           <div style="position: absolute;bottom: 0;">
+            </div>
+           <div>
                <hr/>
                <sup id="fn1">*. [Parts of the content provided in the slides is taken from <a
                        href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/">Greg Baker's Study Guide</a> and
