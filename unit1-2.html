@@ -1,0 +1,223 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 1-2</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+		<style>
+			.titillium {
+				font-family: 'Titillium Web', sans-serif;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit1: the Internet and the World Wide Web</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+						<li style="opacity: 0.5;">Define the Internet</li>
+						<li style="opacity: 0.5;">History of the Internet</li>
+						<li style="opacity: 0.5;">Internet Basics</li>
+						<hr/>
+						<li>Protocols</li>
+						<li>Surfing the Web</li>
+						<li>MIME Types</li>
+						<li>Fetching a Web Page</li>
+					</ol>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Internet Protocols</h4>
+					<p>How do computers communicate and share information using wired connections?</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Definitions</h4>
+					<ul style="float: left">
+						<li>IP Address</li>
+						<li>Port</li>
+						<li>Static IP Address</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Internet Protocols</h4>
+					<ul style="float: left;margin: 0;width: 69%;">
+						<li>a protocol is an information exchange <u>agreement</u> between the computers</li>
+						<ul><li>its a collection of rules</li></ul>
+						<br/>
+						<li>in other words, the protocol is the communication language between computers</li>
+					</ul>
+					<div style="width: 30%;position: absolute;right: 0;">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Welcome_differentlangs.png" alt="Welcome" width="300">
+						<small style="font-size:0.3em;word-wrap: break-word;width: 100%;">* image from https://upload.wikimedia.org/wikipedia/commons/6/65/Welcome_differentlangs.png</small>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Internet Protocols</h4>
+					<h6>Its good to know</h6>
+					<ul>
+						<li>there might be several protocols that do the same task (like the translations of the word "welcome")</li>
+						<li>but there are also protocols that do specific things that others do not</li>
+						<li><b>Port Number</b> is most of the times a numerical designation of the protocol<br/>(e.g. HTTP is typically served on port 80)</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Example Protocols</h4>
+					<p>there are many protocols used online, but a few examples will help you understand what they do</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Border Gateway Protocol (BGP)</h4>
+					<p>The language with which ISPs communicate!</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Simple Mail Transport Protocol (SMTP)</h4>
+					<ul>
+						<li>used by email clients (Outlook, Thunderbird, or a webmail client)</li>
+						<li>e.g. used to send an email from from your university email server to Gmail</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Secure File Transfer Protocol (SFTP)</h4>
+					<ul>
+						<li>used to copy files between computers (e.g. to transfer a file to a web server so others can see it)</li>
+						<li>can only be used when you have an account on the other computer</li>
+						<ul><li>you enter a username and password to confirm your identity and then can manage your files</li></ul>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Proprietary Protocols</h4>
+					<p>Let's assume a multilayer online game (e.g. Counter-Strike or Call of Duty)</p>
+					<p>how does each player instance communicate to the others?</p>
+					<p>what will each communication message contain?</p>
+					<aside class="notes">
+						Multiplayer online games (Counter-Strike, Minecraft, Call of Duty, …) all need to communicate game data over the Internet.
+						Each of them has its own protocol to transmit the kind of information it needs (where an enemy is, how the player is moving, what is on the ground in a particular position, …).
+						In each case, the game itself knows how to communicate and coordinate with the servers of the company that made the game, or with other players' computers directly.
+					</aside>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Other Proprietary Protocols</h4>
+					<ul>
+						<li><b>Network gaming</b>: already mentioned!</li>
+						<li><b>Instant messaging</b>: iMessage and Skype, others Yahoo!, Google, Facebook.
+						<li><b>Peer-to-peer file transfer</b>: Napster, Apple’s AirDrop, BitTorrent (sort of)</li>
+						<li><b>Streaming</b>: iTunes, Netflix, YouTube, Vimeo, CBC Music</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">HyperText Transfer Protocol (HTTP)</h4>
+					<p>The protocol of our interest in this course</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">What is a HyperText ?</h4>
+					<blockquote cite="https://en.wikipedia.org/wiki/Hypertext">
+						&ldquo;HyperText is text ... with references (hyperlinks) to other text that the reader can immediately access ...[*]&rdquo;
+					</blockquote>
+					<small>[*] <a href="https://en.wikipedia.org/wiki/Hypertext">https://en.wikipedia.org/wiki/Hypertext</a></small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">HyperText Transfer Protocol (HTTP)</h4>
+					<blockquote cite="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">
+						&ldquo;HTTP is an application protocol for distributed, collaborative, and hypermedia information systems.
+						<br/> HTTP is the foundation of data communication for the World Wide Web. ...[*]&rdquo;
+					</blockquote>
+					<small>[*] <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol</a></small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">HyperText Transfer Protocol (HTTP)</h4>
+					<ul>
+						<li>the protocol that is used for the World Wide Web</li>
+						<li>whenever your browser requests a page, it does it by contacting a web server and making the request with HTTP</li>
+						<li>the server then responds by sending the page, again with HTTP</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Surfing the Web</h4>
+					<p>when you click on a link in your web browser, you are making a request for a web page</p>
+					<p style="float: left">in the course of your action</p>
+					<ul>
+						<li>your web browser on your computer is acting as the <b>client</b> for this request</li>
+						<ul><li>tools (e.g. search engines or HTML validators) can act as clients as well!</li></ul>
+						<li>your web browser contacts a <b>web server</b> to make its request</li>
+					</ul>
+
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">A Web Request Demonstration</h4>
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Scheme_static_page_en.svg/1200px-Scheme_static_page_en.svg.png" alt="Client-Server Connection" width="700">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Scheme_static_page_en.svg/1200px-Scheme_static_page_en.svg.png</small>
+				</section>
+				<!--<section>
+					<h4 style="border-bottom: 1px solid gray">What is a Markup Language ?</h4>
+					<blockquote cite="https://en.wikipedia.org/wiki/Markup_language">
+						&ldquo;A markup language is a system for annotating a document in a way that is syntactically distinguishable from the text ...[*]&rdquo;
+					</blockquote>
+					<small>[*] <a href="https://en.wikipedia.org/wiki/Markup_language">https://en.wikipedia.org/wiki/Markup_language</a></small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Generalized Markup Languages</h4>
+					<img src="img/gml.svg" alt="Generalized Markup Languages" width="900">
+					<small>* idea from http://images.slideplayer.com/33/8232613/slides/slide_17.jpg</small>
+				</section>
+
+				<section>
+					<h4 style="border-bottom: 1px solid gray">HyperText Markup Language (HTML)</h4>
+				</section>
+				<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
