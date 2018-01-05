@@ -171,7 +171,102 @@
 					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Scheme_static_page_en.svg/1200px-Scheme_static_page_en.svg.png" alt="Client-Server Connection" width="700">
 					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Scheme_static_page_en.svg/1200px-Scheme_static_page_en.svg.png</small>
 				</section>
-				<!--<section>
+				<section>
+					<p>What is the very least piece of information that we need to request a webpage?</p>
+				</section>
+
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Uniform Resource Locator (URL)</h4>
+					<p>URL is used by a web browser (or other tool) to find (locate) a page or other content (a resource) on the web</p>
+					<img src="img/url.svg" alt="URL" width="800">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/url.svg</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Name to IP Address Lookup</h4>
+					<img src="http://cdn.ttgtmedia.com/rms/onlineImages/DNS_servers_desktop.jpg" alt="DNS Lookup" width="750">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from http://cdn.ttgtmedia.com/rms/onlineImages/DNS_servers_desktop.jpg</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Multipurpose Internet Mail Extension (MIME) Types</h4>
+					<p>The standard way of indicating the type of the document being sent via HTTP</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">MIME Type Examples</h4>
+					<table style="font-size: 0.5em; border: 1px solid gray">
+						<thead>
+						<tr>
+							<th scope="col">Type</th>
+							<th scope="col">Description</th>
+							<th scope="col">Example of typical subtypes</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td><code>text</code></td>
+							<td>Represents any document that contains text and is theoretically human readable</td>
+							<td><code>text/plain</code>, <code>text/html</code>, <code>text/css, text/javascript</code></td>
+						</tr>
+						<tr>
+							<td><code>image</code></td>
+							<td>Represents any kind of images. Videos are not included, though animated images (like animated gif) are described with an image type.</td>
+							<td><code>image/gif</code>, <code>image/png</code>, <code>image/jpeg</code>, <code>image/bmp</code>, <code>image/webp</code></td>
+						</tr>
+						<tr>
+							<td><code>audio</code></td>
+							<td>Represents any kind of audio files</td>
+							<td><code>audio/midi</code>, <code>audio/mpeg, audio/webm, audio/ogg, audio/wav</code></td>
+						</tr>
+						<tr>
+							<td><code>video</code></td>
+							<td>Represents any kind of video files</td>
+							<td><code>video/webm</code>, <code>video/ogg</code></td>
+						</tr>
+						<tr>
+							<td><code>application</code></td>
+							<td>Represents any kind of binary data.</td>
+							<td><code>application/octet-stream</code>, <code>application/pkcs12</code>, <code>application/vnd.mspowerpoint</code>, <code>application/xhtml+xml</code>, <code>application/xml</code>,&nbsp; <code>application/pdf</code></td>
+						</tr>
+						</tbody>
+					</table>
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* table from https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types</small>
+				</section>
+
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Fetching a Web Resource Using HTTP</h4>
+					<h6>Example Request</h6>
+					<pre><code>
+GET /assets/cmpt165.txt HTTP/1.1
+Host: mytesthost.com
+User-Agent: The Imaginary Browser
+					</code></pre>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Fetching a Web Resource Using HTTP</h4>
+					<h6>Example Response</h6>
+					<pre><code>
+HTTP/1.1 200 OK
+Last-Modified: Mon, 23 Jul 2017 08:41:56 GMT
+Content-Length: 36
+Content-Type: text/plain
+
+this is my awesome coding experience
+					</code></pre>
+				</section>
+				<section>
+					<p>now that we have seen how the web pages get from the server to the browser,
+						<br/> we should turn to how they are actually made.
+						<br/> that is what we're going to be spending most of the course learning about</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Webpage Creation Technologies </h4>
+					<p>there are three different technologies used to create web pages and they cover three main aspects of a web page</p>
+					<ul>
+						<li><b>Content</b>: HTML (HeperText Markup Language)</li>
+						<li><b>Appearance</b>: CSS (Cascading Style Sheets)</li>
+						<li><b>Behaviour</b>: JavaScript</li>
+					</ul>
+				</section>
+				<section>
 					<h4 style="border-bottom: 1px solid gray">What is a Markup Language ?</h4>
 					<blockquote cite="https://en.wikipedia.org/wiki/Markup_language">
 						&ldquo;A markup language is a system for annotating a document in a way that is syntactically distinguishable from the text ...[*]&rdquo;
@@ -186,6 +281,41 @@
 
 				<section>
 					<h4 style="border-bottom: 1px solid gray">HyperText Markup Language (HTML)</h4>
+					<ul>
+						<li>is used to describe the content of pages</li>
+						<ul>
+							<li>its usually what people are talking about when they mention <i>a web page</i></li>
+						</ul>
+						<li>it expresses things like <i>this is a paragraph</i> or <i>this is an important word</i></li>
+						<li>it is not concerned about how things look</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Cascading Style Sheets (CSS)</h4>
+					<ul>
+						<li>suggests appearances for the pieces of content we have created in HTML</li>
+						<li>expresses ideas like <i>all paragraphs should have this font size</i> with CSS</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">JavaScript</h4>
+					<ul>
+						<li>is a programming language that is embedded in web browsers</li>
+						<li>can be used to insert logic and behaviour into web pages</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Why we need to separate Content, Appearance, and Behaviour?</h4>
+					<ul class="fragment">
+						<li><b>Efficiency</b>: less files to be downloaded in the browser (caching will be possible)</li>
+						<li><b>Faster Development</b>: not everything is written again and again in every page (different people can work on different parts of the page)</li>
+						<li><b>Easier to Maintain</b>: a single change will be made once!</li>
+					</ul>
+				</section>
+				<!--<section>
+					<h4 style="border-bottom: 1px solid gray"></h4>
+					<img src="" alt="" width="700">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from </small>
 				</section>
 				<section><aside class="notes"></aside></section>-->
 				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
