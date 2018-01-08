@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 2-1</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+		<style>
+			.titillium {
+				font-family: 'Titillium Web', sans-serif;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit2: Markup and HTML</i></h5>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">In this unit you will learn the following</h4>
+					<ul>
+						<li><b>Create</b> web pages in HTML with a text editor, following the rules of XHTML syntax and using appropriate HTML tags</li>
+						<li><b>Create</b> a web page that includes links and images</li>
+						<li><b>List</b> some common HTML tags</li>
+						<li><b>Use</b> relative URLs to refer to resources on a website</li>
+					</ul>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+						<!--<li>Making Web Pages</li>
+						<li>Your First HTML Page</li>
+						<li>HTML Tags</li>
+						<li>Why Do Markup?</li>
+						<li>Attributes</li>
+						<li>List Tags, Another Page</li>
+						<li>Images in HTML</li>
+						<li>Hypertext Links</li>
+						<li>Using HTML Tables</li>
+						<li>Relative URLs</li>
+						<li>Multi-Page Sites</li>-->
+						<li>Text Files and Markup</li>
+						<li>HTML and Tags</li>
+						<li style="opacity: 0.5">Attributes and More</li>
+						<li style="opacity: 0.5">Semantic Markup</li>
+						<li style="opacity: 0.5">Validating HTML</li>
+						<li style="opacity: 0.5">URLs: Links and Images</li>
+						<li style="opacity: 0.5">Character References</li>
+					</ol>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Markup Languages</h4>
+					<ul>
+						<li>A markup language is a way to describe a document for a computer using only plain text</li>
+						<li>LaTeX is a markup language often used for scientific and mathematical documents</li>
+					</ul>
+					<code style="font-size: 0.4em">This is a sentence with an \emph{emphasized} word, and a formula: \(x^2 - x + 1\).</code>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/latex.png" alt="" width="700">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/latex.png</small>
+				</section>
+
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Same Example in HTML</h4>
+					<code style="font-size: 0.5em">
+						&lt;p&gt;This is a sentence with an &lt;em&gt;emphasized&lt;/em&gt; word,<br/>and a formula: x&lt;sup&gt;2&lt;/sup&gt; - x + 1.&lt;/p&gt;
+					</code>
+					<br/>
+					<br/>
+					<div style="border: 1px solid gray"><p>This is a sentence with an <em>emphasized</em> word, <br/>
+						and a formula: x<sup>2</sup> - x + 1.</p></div>
+				</section>
+				<section>
+					<p>All of HTML, CSS, and JavaScript files are <br/>just <em>Text Files</em> with code in them</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Text Files and Text Editors</h4>
+					<p>A Text File is a generic term for a file that contains only characters</p>
+
+					<ul>
+						<li>they could be for storing data (like CSV files for spreadsheet data)</li>
+						<li>or could be documents (like LaTeX or HTML files)</li>
+						<li>or could be programs (in JavaScript, Python, Java, C, …)</li>
+					</ul>
+					<p>In order to work with text files, you will need a program called a text editor</p>
+				</section>
+
+				<section>
+					<p>HTML files are edited with a text editor: <br/>
+						just make sure you save the file with the extension <b>.html</b> <br/>
+						(i.e. name it something like mypage.html)</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The History of HTML [*]</h4>
+					<p>HTML 1.0</p>
+					<ul>
+						<li>the first release of HTML to the world</li>
+						<li>not many people were involved in website creation at the time, and the language was very limiting</li>
+						<li>what it could to was to get some simple text onto the web</li>
+					</ul>
+					<hr/><small>* content from http://www.yourhtmlsource.com/starthere/historyofhtml.html</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The History of HTML [*]</h4>
+					<p>HTML 2.0</p>
+					<ul>
+						<li>included everything from the original 1.0 specifications but added a few new features to the mix</li>
+						<li>it was the standard for website design until Jan. 1997</li>
+						<li>defined many core HTML features for the first time</li>
+					</ul>
+					<hr/><small>* content from http://www.yourhtmlsource.com/starthere/historyofhtml.html</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The History of HTML [*]</h4>
+					<p>HTML 3.0</p>
+					<ul>
+						<li>began with the introduction of new proprietary tags and attributes into Netscape Navigator browser</li>
+						<ul><li>other browsers began to act differently on the same set of tags</li></ul>
+						<li>Was abandoned due to the slow speed of browser companies to implement the full set of new extensions</li>
+					</ul>
+					<hr/><small>* content from http://www.yourhtmlsource.com/starthere/historyofhtml.html</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The History of HTML</h4>
+					<p>HTML 3.2</p>
+					<ul>
+						<li>world Wide Web Consortium (abbreviated to the W3C) was founded in 1994</li>
+						<li>W3C introduced its first web developement standard as WILBUR or HTML 3.2</li>
+						<li>most of the extensions tags that had been introduced by Netscape did not make it into these new standards</li>
+						<li>it soon caught on and became the official standard in Jan. 1997, and today practically all browsers support it fully</li>
+					</ul>
+					<hr/><small>* content from http://www.yourhtmlsource.com/starthere/historyofhtml.html</small>
+
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The History of HTML</h4>
+					HTML 4.0
+					<ul>
+						<li>most of its new functionality set came from the ill-fated HTML 3.0 specs and old tags</li>
+						<li>the focus was on internationalisation, and support for HTML’s new supporting presentational language, cascading stylesheets</li>
+						<li>was recommended by the W3C in Dec. 1997 and became the official standard in Apr. 1998</li>
+					</ul>
+					<hr/><small>* content from http://www.yourhtmlsource.com/starthere/historyofhtml.html</small>
+
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The History of HTML</h4>
+					<p>XHTML 1.0</p>
+					<ul>
+						<li>W3C recommended it as the web developement standard in Jan. 2000</li>
+						<li>it inherits from both XML and HTML</li>
+						<li>there were not many new or deprecated tags and attributes in XHTML</li>
+						<li>it is mainly just a new set of coding rules</li>
+						<ul><li><b>you have to close every tag you open!</b></li></ul>
+					</ul>
+					<hr/><small>* content from http://www.yourhtmlsource.com/starthere/historyofhtml.html</small>
+
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The History of HTML</h4>
+					<p>HTML 5.0</p>
+					<ul>
+						<li>W3C was trying to introduce XHTML 2.0</li>
+						<li>Web Hypertext Application Technology Working Group (WHATWG) developed a new specification set over HTML 4.0</li>
+						<ul><li>W3C disconiued XHTML 2.0 and announced HTML 5.0 as the new standard on Sep. 2014</li></ul>
+					</ul>
+					<hr/><small>* content from http://www.yourhtmlsource.com/starthere/historyofhtml.html</small>
+
+				</section>
+				<section>
+					<p>Now let's see what an HTML document looks like</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">HTML Page Structure</h4>
+					<img src="img/htmls.png" alt="HTML Structure" width="973">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from https://www.w3schools.com/html/html_intro.asp</small>
+				</section>
+
+				<section>
+					<h4 style="border-bottom: 1px solid gray">HTML Tags</h4>
+					<p>the things wrapped in triangular braces <br/>(the &lt; … &gt; characters) are called <b>tags</b></p>
+					<p>There are both <b>opening tags</b> and <b>closing tags</b> <br/>(or <b>starting tags</b> and <b>ending tags</b>)
+						<br/> which come in pairs to enclose pieces of content</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">An HTML Page Example</h4>
+					<img src="img/htmlc.png" alt="HTML Example" width="500">
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Basic Tags</h4>
+					<dl style="font-size: 0.5em">
+						<dt><code class="html">&lt;!DOCTYPE html&gt;</code></dt><dd id="doctype">This isn't really a tag or an element, it is the <dfn>document type declaration</dfn> (or <dfn>doctype</dfn>) for the page. This doctype indicates that the page is HTML5. The doctype doesn't have a closing version: it's the first thing in an <code class="file">.html</code> file and stands alone.</dd>
+						<dt id="htmltag"><code class="html dfn">&lt;html&gt;…&lt;/html&gt;</code></dt><dd>This element contains entire HTML page. It should be the first tag to start (after the doctype) and last to close.</dd>
+						<dt id="headtag"><code class="html dfn">&lt;head&gt;…&lt;/head&gt;</code></dt><dd>This element contains information <em>about</em> the page (as opposed to content of the page). For now, it will hold only the <code class="html">&lt;title&gt;</code> and <code class="html">&lt;meta&gt;</code> tags.</dd>
+						<dt id="titletag"><code class="html dfn">&lt;title&gt;…&lt;/title&gt;</code></dt><dd>This element gives the main title for the page. It gives the main title for the document, which is used in the title bar and for bookmarks to the page.</dd>
+						<dt id="metatag"><code class="html dfn" data-term="<meta />">&lt;meta charset="UTF-8" /&gt;</code></dt><dd>This tag tells the browser about the “character encoding” for this document. The details aren't important now, but it's a property of how the text file is encoded when it is saved. This <code class="html">&lt;meta&gt;</code> tag should be in every HTML file like this.
+						<p>You may have also noticed that it has no closing tag, and that there's some extra stuff in the tag. We will get to that very soon…</p></dd>
+						<dt id="bodytag"><code class="html dfn">&lt;body&gt;…&lt;/body&gt;</code></dt><dd>Finally, this element contains the actual content of the page: the part that is displayed in the main browser window. Most of the new tags we learn will go somewhere in the <code class="html">&lt;body&gt;</code>.</dd>
+					</dl>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">An HTML Page Example (Extended)</h4>
+					<img src="img/htmlc2.png" alt="HTML Example" width="800">
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">More Tags</h4>
+					<dl style="font-size: 0.6em">
+						<dt><code class="html dfn" id="h1tag">&lt;h1&gt;</code></dt><dd>This tag is used for a “level 1” heading. That is, it's the most important heading on the page. Typically, every page should start with an <code class="html">&lt;h1&gt;</code> that has the same contents as the <code class="html">&lt;title&gt;</code>: the main title for the page.</dd>
+						<dt id="emtag"><code class="html dfn">&lt;em&gt;</code></dt><dd>This tag indicates <dfn>emphasized text</dfn>: some important word or phrase in the sentence. An <code class="html">&lt;em&gt;</code> must go inside a paragraph (or heading, or other “block-level” element as we'll see later).</dd>
+						<dt id="ultag"><code class="html dfn">&lt;ul&gt;</code></dt><dd>This tag describes an <dfn>unordered list</dfn>. That is, it contains a list of things where the order isn't important. The <code class="html">&lt;ul&gt;</code> element (and the ordered list version <code class="html dfn">&lt;ol&gt;</code>, or menu list <code class="html dfn">&lt;menu&gt;</code>) can't contain text the way a <code class="html">&lt;p&gt;</code> can: it can only contain <code class="html">&lt;li&gt;</code> elements.</dd>
+						<dt id="litag"><code class="html dfn">&lt;li&gt;</code></dt><dd id="li">These are the only thing that can go in a <code class="html">&lt;ul&gt;</code> or <code class="html">&lt;ol&gt;</code> element (and can <strong>only</strong> be inside one of those elements). They denote <dfn>list items</dfn>.</dd>
+					</dl>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Whitespace</h4>
+					<ul>
+						<li>the line breaks, spaces, and other formatting in the HTML code have no effect of the display in the browser</li>
+						<li>if you press enter a few times to insert a blank link in the HTML, it will not change the appearance in the browser</li>
+						<li>you must use tags (and later we'll see CSS styles) to change the way things look</li>
+					</ul>
+					<img src="img/htmlc3.png" alt="HTML Example" width="400">
+				</section>
+				<!--<section>
+					<h4 style="border-bottom: 1px solid gray">Definitions</h4>
+					<ul>
+						<li><b>Webpage</b>: a HyperText Markup Language (HTML) document connected to the World Wide Web</li>
+						<li><b>Website</b>: a location on the Internet that contains web page(s) on the World Wide Web</li>
+					</ul>
+				</section>
+
+				<section>
+					<h4 style="border-bottom: 1px solid gray"></h4>
+					<img src="" alt="" width="700">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from </small>
+				</section>
+				<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
