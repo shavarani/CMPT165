@@ -1,0 +1,341 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 2-1</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+		<style>
+			.titillium {
+				font-family: 'Titillium Web', sans-serif;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit2: Markup and HTML</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+						<li style="opacity: 0.5">Text Files and Markup</li>
+						<li style="opacity: 0.5">HTML and Tags</li>
+						<li>Attributes and More HTML Tags</li>
+						<li>Semantic Markup</li>
+						<li style="opacity: 0.5">Validating HTML</li>
+						<li style="opacity: 0.5">URLs: Links and Images</li>
+						<li style="opacity: 0.5">Character References</li>
+					</ol>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Attributes</h4>
+					<p>attributes are used to change <br/>the meaning or behaviour of tags</p>
+					<ul>
+						<li>the attr. is placed in the opening tag, before the &quot;&gt;&quot;. </li>
+						<li>it has a value which follows the attribute in quotes</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">cite tag</h4>
+					<p>we can indicate what language is being used in a citation using the &lt;cite&gt; element and the lang attribute for it</p>
+
+					<div style="border: 1px solid gray">
+						<code style="font-size: 0.7em">
+							&lt;p&gt;In his work <br/>&lt;cite lang=&quot;la&quot;&gt;Principia Mathematica&lt;/cite&gt;,<br/>Newton introduced...&lt;/p&gt;
+						</code>
+					</div>
+					<small style="font-size: 0.4em;padding-top: 0.4em">
+						* the attribute &quot;lang&quot; indicates that the language of the content is Latin. <br/>
+						This could be used by a browser to offer an automatic translation, <br/>
+						or by a speech browser to change pronunciation rules to read the content correctly
+					</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">abbr tag</h4>
+					<p>
+						the &lt;abbr&gt; tag is used to indicate an abbreviation, or other short-form or contraction.<br/>
+						The title attribute is used to provide an expansion of the abbreviation
+					</p>
+					<div style="border: 1px solid gray">
+						<code style="font-size: 0.7em">
+							&lt;p&gt;In this course, we are using <br/>
+							&lt;abbr title=&quot;HyperText Markup Language&quot;&gt;HTML&lt;/abbr&gt;<br/>
+							to create web pages.&lt;/p&gt;
+						</code>
+					</div>
+					<small style="font-size: 0.4em;padding-top: 0.4em">
+						* when a browser displays this content, it can use the value of the &quot;title&quot; attribute <br/>
+						to offer the reader an expansion of the abbreviation
+					</small>
+				</section>
+				<section>
+					<p>there is one tag (and attribute to go with it) that is <br/>
+						very important to make the Web what it is<br/>
+						<b>it creates links</b>
+					</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">anchor tag</h4>
+					<p>
+						the &lt;a&gt; tag is is used to create links. <br/>
+						the &quot;href&quot; attribute gives the destination for the link
+					</p>
+					<div style="border: 1px solid gray">
+						<code style="font-size: 0.65em">
+							&lt;p&gt;Some popular web browsers are <br/>
+							&lt;a href=&quot;https://www.mozilla.org/en/firefox/&quot;&gt;Firefox&lt;/a&gt; and <br/>
+							&lt;a href=&quot;https://www.google.com/chrome/&quot;&gt;Chrome&lt;/a&gt;.&lt;/p&gt;
+						</code>
+					</div>
+					<small style="font-size: 0.4em;padding-top: 0.4em">
+						*  the contents of the &lt;a&gt; element are styled like a link, and <br/>
+						if you try clicking on the links, you will go to the URLs given by the &quot;href&quot;
+					</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">horizontal rule tag</h4>
+					<p>
+						&lt;ht /&gt; is one of the <em>empty tags</em> which is in charge of putting a horizontal line in the parent container
+					</p>
+					<code style="font-size: 0.65em">
+					&lt;p&gt;And the long day was finally over.&lt;/p&gt; <br/>
+					&lt;hr /&gt;<br/>
+					&lt;p&gt;The next day, they woke up and...&lt;/p&gt;
+					</code>
+					<div style="border: 1px solid gray; padding: 1%">
+						<p>And the long day was finally over.</p>
+						<hr />
+						<p>The next day, they woke up and...</p>
+					</div>
+
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">[line] break tag</h4>
+					<p>
+						&lt;br /&gt; is another <em>empty tag</em> which is in charge of putting a line break after the previous content
+					</p>
+					<code style="font-size: 0.65em">
+						&lt;p&gt;And the long day was finally over.&lt;/p&gt; <br/>
+						&lt;br /&gt;<br/>
+						&lt;p&gt;The next day, they woke up and...&lt;/p&gt;
+					</code>
+					<div style="border: 1px solid gray; padding: 1%">
+						<p>And the long day was finally over.</p>
+						<br />
+						<p>The next day, they woke up and...</p>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">A Complete Webpage</h4>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/complete-page.png"
+						 alt="A Complete Webpage" width="700">
+					<small>* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/complete-page.png</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The Same Webpage With CSS</h4>
+					<div style="margin: 1%;padding: 1%; border: 1px solid gray; font-size: 0.5em">
+						<h1>HTML Basics</h1>
+						<p>
+							We have now learned some <a href="http://en.wikipedia.org/wiki/HTML">
+							basics of <abbr title="HyperText Markup Language">HTML</abbr></a>:
+							tags and attributes. There is more to learn, but that's enough to get
+							us started.
+						</p>
+						<h2 id="future">More to Learn</h2>
+						<p>
+							We have more to work on: entities, validation, and how everything
+							fits together. We'll look at that soon. We will also talk about how
+							CSS and JavaScript relate to HTML.
+						</p>
+
+						<h2 id="not-covered">Not In This Course</h2>
+						<p>
+							There are some aspects of HTML that we won't cover in this course,
+							but not many. We won't cover some of the more advanced aspects of
+							embedding content or interaction.
+						</p>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The Webpage HTML Code</h4>
+					<img src="img/htmlc4.png" alt="HTML Example" width="874">
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Different Markup Types</h4>
+					<ul>
+						<li>Semantic Markup</li>
+						<li>Visual/Presentational Markup</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Semantic Markup</h4>
+					<p>aims to describe the semantics of content (e.g. HTML)</p>
+					<ul>
+						<li>what that content means</li>
+						<li>what kind of content it is</li>
+						<li>or what its purpose or role is on the page</li>
+					</ul>
+
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Visual/Presentational Markup</h4>
+					<p>aims to specify the appearance of content directly (e.g MS Word Visual Formatting)</p>
+					<p>example discriptor: <br/><em>this text is on a new line, left justified, in a 12pt font</em></p>
+				</section>
+				<section>
+					<p style="text-align: left !important;">with Visal Markup </p>
+					<ul>
+						<li>we will not be able to easily re-style everything</li>
+						<li>we would have to change each &quot;paragraph&quot; separately</li>
+					</ul>
+				</section>
+				<section>
+					<p>
+						if the markup is well written, the search engines can extract lots of meaning (semantics) just from our markup (e.g. the page outline)
+					</p>
+					<div style="border: 1px solid gray;">
+						<ol>
+							<li>HTML Basics
+								<ol style="list-style-type: lower-roman;">
+									<li>More to Learn</li>
+									<li>Not In This Course</li>
+								</ol>
+							</li>
+						</ol>
+					</div>
+					<small style="font-size: 0.4em;padding-top: 0.4em">
+						* the extracted outline based on the semantic markup of the complete webpage example of slide 12
+					</small>
+				</section>
+				<section>
+					<p>
+						Since HTML is a <b>semantic markup language</b>, <br/>we should be keeping the meaning of our content in mind as we are creating the pages
+					</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Example sentences to mark up</h4>
+					<div>
+						<p>Why do <em>you</em> think that is interesting?</p>
+						<p>You must <strong>never</strong> let that happen.</p>
+						<p>I used the <code>&lt;li&gt;</code> tag for each item.</p>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Example mark up code</h4>
+					<code style="text-align: left; font-size: 0.65em">
+						&lt;p&gt;Why do &lt;em&gt;you&lt;/em&gt; think that is interesting?&lt;/p&gt; <br/>
+						&lt;p&gt;You must &lt;strong&gt;never&lt;/strong&gt; let that happen.&lt;/p&gt; <br/>
+						&lt;p&gt;I used the &lt;code&gt;&amp;lt;li&amp;gt;&lt;/code&gt; tag for each item.&lt;/p&gt;
+					</code>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">class and id Attributes</h4>
+					<p>
+						the <b>class</b> and <b>id</b> attributes can be used to give<br/>extra semantic information about elements.<br/>
+						<br/>e.g. we can continue to use <code>&lt;p&gt;</code> for most paragraphs,<br/>
+						but <code>&lt;p id="copyright"&gt;</code> for the one that is semantically different from the others
+						<br/><br/>
+						The value of class and id can be any word, but should be meaningful (i.e. something about the meaning, not the appearance)
+					</p>
+				</section>
+				<section>
+					<p>what is the important difference between <br/> the <b>class</b> and the <b>id</b> attributes ?</p>
+				</section>
+				<section>
+					<p>there is no way we could add HTML tags to match every kind of content that everyone ever uses</p>
+					<p>that is why we need <em>Generic Tags</em>: <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code></p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Block-Level Elements</h4>
+					<ul>
+						<li>hold block-level content (or sometimes flow content)</li>
+						<li>it can go directly inside the &lt;body&gt; and is displayed below the previous block</li>
+						<li>Most commonly used: <b>&lt;div&gt; element</b></li>
+						<li>
+							Other block-level elements we have seen include <br/>
+							&lt;p&gt;, &lt;h1&gt;, &lt;h2&gt;, &lt;ul&gt;, and &lt;li&gt;
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Inline-Level Elements</h4>
+					<ul>
+						<li>hold inline content (or sometimes phrasing content)</li>
+						<li>inline content goes inside a block</li>
+						<li>it needs to be part of a paragraph, heading, list item, or other block</li>
+						<li>Most commonly used: <b>&lt;span&gt; element</b></li>
+						<li>
+							Other inline elements include <br/>
+							&lt;em&gt;, &lt;a&gt;, and &lt;abbr&gt;
+						</li>
+					</ul>
+				</section>
+				<section>
+					<p>
+						Because they don't have any meaning on their own, <br/> &lt;div&gt; and &lt;span&gt;<br/>
+						should always be given a <b>meaningful class or id value</b> that indicates their purpose on the page
+					</p>
+				</section>
+				<!--
+				<section>
+					<h4 style="border-bottom: 1px solid gray"></h4>
+					<img src="" alt="" width="700">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from </small>
+				</section>
+				<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
