@@ -54,6 +54,251 @@
 					<h4 style="border-bottom: 1px solid gray">Invalid HTML Example</h4>
 					<img src="img/htmlc5.png" alt="HTML Example" width="932">
 				</section>
+				<section>
+					<p>
+						we know that every (non-empty) tag must be closed <br/><br/>
+						what if one is not closed? <br/><br/>
+						how will <em>a web browser or a mobile browser, or Google, or other tools that read HTML</em> interpret that markup?
+					</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Invalid HTML Example</h4>
+					<img src="img/htmlc6.png" alt="HTML Example" width="932">
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Invalid HTML Example</h4>
+					<p style="font-size: 0.7em; text-align: left">
+					<code>&lt;p&gt;&hellip; the &lt;a href=&quot;http://www.w3.org/&quot;&gt;<br/>&lt;abbr title=&quot;World Wide Web
+						Consortium&quot;&gt;W3C&lt;/a&gt;,<br/> the group that &hellip;&lt;/p&gt;</code>
+					</p>
+					<p style="text-align: left">- Which one is the correct render ?</p>
+					<span>… the <a href="http://www.w3.org/"><abbr title="World Wide Web
+Consortium">W3C</abbr></a>, the group that …</span>
+					<span>
+						<p>… the <abbr title="World Wide Web
+Consortium"><a href="http://www.w3.org/">W3C</a>, the group that …</abbr></p>
+					</span>
+				</section>
+				<section>
+					<p>HTML Validation will prevent rendering inconsistency errors in different browsers!</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">HTML validator</h4>
+					<p>a tool that compares our document against the rules of HTML markup and tells us if there are any problems</p>
+					<br/>
+					<p>the best validator to use is <a href="http://validator.w3.org/">http://validator.w3.org/</a></p>
+					<br/>
+					<small>if the validator gives many errors, <strong>fix the first</strong> one and then try validating again
+						<br/>lets try the validator with <br/><a
+								href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/invalid.html">http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/invalid.html</a></small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The Robustness Principle</h4>
+					<p style="text-align: left">when two pieces of software are communicating</p>
+					<ul>
+						<li>
+							<span>
+								<b>the one sending out information</b> should be very careful what it sends, to make sure that the receiver understands it
+							</span>
+						</li>
+						<li>
+							<span>
+								<b>the receiver</b> should do its best to gracefully handle small errors in what it receives
+							</span>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The Robustness Principle</h4>
+					<p>
+						If both sides uphold their end of this bargain, everything should be transmitted correctly and there should be no errors or miscommunication
+					</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The Robustness Principle</h4>
+					<p><b>CLAIM</b>: considering this principle, all the sentences provided here carry the same information,
+						<br/> do they really do so ?</p>
+					<ol>
+						<li>You are smart</li>
+						<li>Smart is a thing that you is</li>
+						<li>LOL ur smrt!!!</li>
+						<li>It is smart is a kind of thing you are</li>
+					</ol>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">URLs: Links and Images</h4>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">&lt;img&gt; tag</h4>
+					<p>used to refer to images <br/> so they can be displayed on the page</p>
+					<code style="font-size: 0.6em">
+						&lt;img src=&quot;http://example.com/vacation.jpg&quot; alt=&quot;My vacation&quot; /&gt;
+					</code>
+					<br/>
+					<small style="font-size: medium; padding-top: 1%">
+						the <b>src</b> attribute is used to give the URL of the image <br/>
+						the <b>alt</b> attribute gives alternate text <br/>
+						text that can be displayed in place of the image if it cannot be loaded
+					</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Different Types of URLs</h4>
+					<ul>
+						<li><strong>Absolute URLs</strong></li>
+						<li><strong>Relative URLs</strong></li>
+					</ul>
+					<br/>
+					<img src="img/url.svg" alt="URL" width="600">
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Absolute URLs</h4>
+					<ul>
+						<li>the URLs that we have seen so far are absolute URLs</li>
+						<li>absolute URLs contain a scheme, server, and path as described before</li>
+						<li>absolute URLs can be used to locate a piece of content on the web with no other information or context</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Relative URLs</h4>
+					<ul>
+						<li>they refer to content by giving its position relative to the current page</li>
+						<li>they give information like <em>in the same folder, find the page nextpage.html</em> or <em>look in the folder images for the image selfie.jpg</em></li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Relative URLs</h4>
+					<p>Different types of relative addressing</p>
+					<ol style="float: left;margin: 0;width: 69%;">
+						<li>referring to the same folder as current html file (itself)</li>
+						<li>referring to a folder inside the containing folder (its children)</li>
+						<li>referring to a folder containing the containing foldr (its parents)</li>
+					</ol>
+					<div style="width: 30%;position: absolute;right: 0;">
+						<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/directory-structure.svg" alt="Directory Structure" width="300">
+						<small style="font-size:0.3em;word-wrap: break-word;width: 100%;">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/directory-structure.svg</small>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Relative URLs | Current Folder Example</h4>
+					<div style="border: 1px solid gray; text-align: left; font-size: 0.9em">
+						<code>
+							&lt;p&gt; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;nextpage.html&quot;&gt;next page&lt;/a&gt; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;happy.png&quot; alt=&quot;happy face&quot; /&gt; <br/>
+							&lt;/p&gt;
+						</code>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Relative URLs | Children Folders Example</h4>
+					<div style="border: 1px solid gray; text-align: left; font-size: 0.6em">
+						<code>
+							&lt;p&gt; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;vacations/europe.html&quot;&gt;European vacation&lt;/a&gt;
+							<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;vacations/pictures/eiffel.jpg&quot;&gt;<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;us at the Eiffel Tower <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;/a&gt;
+							<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;vacations/pictures/eiffel.jpg&quot; alt=&quot;Eiffel Tower&quot; /&gt;
+							<br/>
+							&lt;/p&gt;
+						</code>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Relative URLs | Parent Folders Example</h4>
+					<div style="border: 1px solid gray; text-align: left; font-size: 0.55em">
+						<code>
+							&lt;p&gt; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;../menu.html&quot;&gt;back to the menu&lt;/a&gt;
+							<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;a href=&quot;../../submenu.html&quot;&gt;back to the submenu&lt;/a&gt;
+							<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;../../vacations/pictures/big-ben.jpg&quot; alt=&quot;Big Ben&quot; /&gt;
+							<br/>
+							&lt;/p&gt;
+						</code>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Important Points</h4>
+					<ul>
+						<li>
+							<span>
+								<strong>URLs are case sensitive</strong> <br/>(page.html is a different URL than Page.html or PAGE.HTML)
+							</span>
+						</li>
+						<li>
+							<span>slash (/) is the only character used to separate folders/filenames in URLs</span>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Character References for Special Characters</h4>
+					<table style="font-size: 0.6em">
+						<thead><tr><th scope="col">Character</th><th scope="col">Reference</th><th scope="col">Description</th></tr></thead>
+						<tbody>
+						<tr><td>&lt;</td><td><code class="html dfn">&amp;lt;</code></td><td>less-than (usually starts a tag)</td></tr>
+						<tr><td>&gt;</td><td><code class="html dfn">&amp;gt;</code></td><td>greater-than (usually ends a tag)</td></tr>
+						<tr><td>&amp;</td><td><code class="html dfn">&amp;amp;</code></td><td>ampersand (usually starts a reference)</td></tr>
+						<tr><td>"</td><td><code class="html dfn">&amp;quot;</code></td><td>double quote (usually wraps attribute values)</td></tr>
+						<tr><td>'</td><td><code class="html dfn">&amp;apos;</code></td><td>apostrophe/single quote (can wrap attribute values)</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Other Character References</h4>
+					<table style="font-size: 0.6em">
+						<thead><tr><th scope="col">Character</th><th scope="col">Reference</th><th scope="col">Description</th></tr></thead>
+						<tbody>
+						<tr><td>€</td><td><code class="html">&amp;euro;</code></td><td>Euro sign</td></tr>
+						<tr><td>©</td><td><code class="html">&amp;copy;</code></td><td>Copyright symbol</td></tr>
+						<tr><td>“</td><td><code class="html">&amp;ldquo;</code></td><td>left double-quote</td></tr>
+						<tr><td>”</td><td><code class="html">&amp;rdquo;</code></td><td>right double-quote</td></tr>
+						<tr><td>…</td><td><code class="html">&amp;hellip;</code></td><td>ellipsis</td></tr>
+						<tr><td>λ</td><td><code class="html">&amp;lambda;</code></td><td>Greek lowercase lambda</td></tr>
+						<tr><td>✓</td><td><code class="html">&amp;check;</code></td><td>checkmark</td></tr>
+						</tbody>
+					</table>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Numeric Character References</h4>
+					<p>You can put any of the characters mentioned in <br/><a
+							href="https://dev.w3.org/html5/html-author/charref">https://dev.w3.org/html5/html-author/charref</a><br/> inside your HTML code</p>
+					<div style="border: 1px solid lightgray;font-size: 0.5em">
+						<code>
+						I was told that &lt;abbr title=&quot;A &amp;quot;great&amp;quot; thing&quot;&gt;AGT&lt;/abbr&gt;
+						costs &amp;gt;&amp;euro;70. I wonder if it will really be &amp;ldquo;great&amp;rdquo;
+						&amp;amp; if it will be worth it&amp;hellip; probably not. &amp;#128518;
+						</code>
+					</div>
+					<br/>
+					<div style="border: 1px solid lightgray;font-size: 0.5em">
+						I was told that <abbr title="A &quot;great&quot; thing">AGT</abbr>
+						costs &gt;&euro;70. I wonder if it will really be &ldquo;great&rdquo;
+						&amp; if it will be worth it&hellip; probably not. &#128518;
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">HTML Basic Tags [Overview]</h4>
+					<table style="font-size: 0.6em">
+						<tbody>
+						<tr><td>&lt;b&gt;</td><td> is for bold which also looks &lt;strong&gt;</td></tr>
+						<tr><td>&lt;blockquote&gt;</td><td> is of indented quoting</td></tr>
+						<tr><td>&lt;br/&gt;</td><td> is for line break</td></tr>
+						<tr><td>&lt;center&gt;</td><td> is for centring on the page</td></tr>
+						<tr><td>&lt;h#&gt;</td><td> is for heading, from 1 to 6, e.g. h1, h2, h3&hellip;</td></tr>
+						<tr><td>&lt;hr/&gt;</td><td> is for horizontal rule</td></tr>
+						<tr><td>&lt;i&gt;</td><td> is for italic (same as &lt;em&gt; is for emphasis)</td></tr>
+						<tr><td>&lt;p&gt;</td><td> is for paragraph</td></tr>
+						<tr><td>&lt;pre&gt;</td><td> is for pre formatted text</td></tr>
+						<tr><td>&lt;q&gt;</td><td> is for quoting texted (for citations)</td></tr>
+						<tr><td>&lt;tt&gt;</td><td> is for typewriter spacing (monospace), not = &lt;pre&gt;</td></tr>
+						<tr><td>&lt;u&gt;</td><td> is for underline</td></tr>
+						</tbody>
+					</table>
+				</section>
 				<!--
 				<section>
 					<h4 style="border-bottom: 1px solid gray"></h4>
@@ -61,6 +306,9 @@
 					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from </small>
 				</section>
 				<section><aside class="notes"></aside></section>-->
+				<section>
+					At the end lets look at <br/>the <em>Inspection</em> Plugin of the browser ...
+				</section>
 				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
 			</div>
 		</div>
