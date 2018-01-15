@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 3-1</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+		<style>
+			.titillium {
+				font-family: 'Titillium Web', sans-serif;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit3: Stylesheets</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+						<li style="opacity: 1.0">Styles</li>
+						<li style="opacity: 1.0">CSS Basics</li>
+						<li style="opacity: 1.0">CSS Properties</li>
+						<li style="opacity: 0.5">CSS Selectors</li>
+						<li style="opacity: 0.5">Colors in CSS</li>
+						<li style="opacity: 0.5">Styling Pages with CSS</li>
+						<li style="opacity: 0.5">Browser Compatibility</li>
+						<li style="opacity: 0.5">Separating Content and Appearance</li>
+						<li style="opacity: 0.5">CSS Fonts [optional content]</li>
+						<li style="opacity: 0.5">Interactive Color Mixer [optional content]</li>
+					</ol>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Styles</h4>
+					<p>CSS (Cascading Style Sheets) language will give us a way to express information about the appearance of different parts of our content</p>
+					<p>CSS information (style sheets) will also be edited with a text editor, and saved in &quot;.css&quot; files</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Why Separate Style Information?</h4>
+					<ul>
+						<li>CSS will allow us to give all of our site's appearance information in one place</li>
+						<li>even if we have hundreds of HTML files, they can all refer to one CSS file</li>
+						<li>if we want to make a change in the appearance of a site, it requires only a single change</li>
+						<li>we can also have separate people working on different parts of the site</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">CSS Basics - First Problem</h4>
+					<p>
+						Let's say we want to use CSS to change the headings on the page <br/><br/>
+						we want the &lt;h2&gt; elements to be <br/><em>centred</em> (instead of the default left-justified)
+						<br/> and in an <em>italic</em> font
+					</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">CSS Basics - First Solution</h4>
+					<p>make a new file call it <strong>firststyle.css</strong></p>
+					<div style="margin: 0 auto; float: none;text-align: left; font-size: 0.7em; border: 1px solid gray; width: 50%">
+						<code>
+							h2 { <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;text-align: center; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;font-style: italic; <br/>
+							}
+						</code>
+					</div>
+					<p style="text-align: left">
+						<p>In this example:</p>
+						<ul>
+							<li><strong>h2 {...}</strong> block is a CSS <em>rule</em></li>
+							<li><strong>&quot;h2&quot;</strong> in the CSS is a <em>type selector</em></li>
+							<li>two lines in the curly braces are <em>CSS declarations</em> each of which defines a <em>property</em> and a <em>value</em></li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">&lt;link&gt; tag</h4>
+					<p>Let's link the generated CSS file to the HTML codes</p>
+					<div style="text-align: left; font-size: 0.7em; border: 1px solid gray">
+						<code>
+							&lt;head&gt; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset=&quot;UTF-8&quot; /&gt; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Page with a style sheet&lt;/title&gt; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;link rel=&quot;stylesheet&quot; href=&quot;firststyle.css&quot; /&gt; <br/>
+							&lt;/head&gt;
+						</code>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Lets apply the CSS [<a
+							href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/withstyle.html">*</a>]</h4>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/withstyle1.png" alt="Page without style">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* images from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/withstyle[1/2].png</small>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/withstyle2.png" alt="Page with style">
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">CSS Basic Rule Syntax</h4>
+					<pre>
+<strong>
+<var>selectorlist</var> {
+	<var>property</var>: <var>value</var>;</strong>
+	<var>[more property:value; pairs]</var>
+<strong>}</strong>
+... where <var>selectorlist</var> is:
+	<var>selector[:pseudo-class]
+		[::pseudo-element]
+		[, more selectorlists]</var>
+					</pre>
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* from <a
+							href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">https://developer.mozilla.org/en-US/docs/Web/CSS/Reference</a></small>
+
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">text-align</h4>
+					<ul style="font-size: 0.65em">
+						<li>text-align describes how inline content like text is aligned in its parent block element</li>
+						<li>text-align does not control the alignment of block elements, only their inline content</li>
+						<li>look at the demo at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/text-align">https://developer.mozilla.org/en-US/docs/Web/CSS/text-align</a></li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">font-style</h4>
+					<ul style="font-size: 0.65em">
+						<li>font-style CSS property specifies whether a font should be styled with a normal or <i>italic</i> face from its font-family</li>
+						<li>look at the demo at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-style">https://developer.mozilla.org/en-US/docs/Web/CSS/font-style</a></li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">font-weight</h4>
+					<ul style="font-size: 0.65em">
+						<li>font-weight CSS property specifies the weight (or boldness) of the font</li>
+						<li>look at the demo at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight">https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight</a></li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">color</h4>
+					<ul style="font-size: 0.65em">
+						<li><em>color</em> sets the foreground color value of an element's text content and text decorations</li>
+						<li><em>color</em> also sets the currentcolor value, which may be used as <em>border-color</em></li>
+						<li>look at the demo at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color">https://developer.mozilla.org/en-US/docs/Web/CSS/color</a></li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">background-color</h4>
+					<ul style="font-size: 0.65em">
+						<li>sets the background colour (behind the text) for the element</li>
+						<li>look at the demo at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-color">https://developer.mozilla.org/en-US/docs/Web/CSS/background-color</a></li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">border properties</h4>
+					<ul style="font-size: 0.65em">
+						<li>used to control the border around an element (width of the line, type of line, and colour of line, respectively)</li>
+						<li>used to set the border attributes of an element including <em>border-width</em>, <em>border-style</em>, and <em>border-color</em></li>
+						<li>
+							<span>
+								look at the border property demos at
+								<ul>
+									<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-width">https://developer.mozilla.org/en-US/docs/Web/CSS/border-width</a></li>
+									<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-style">https://developer.mozilla.org/en-US/docs/Web/CSS/border-style</a></li>
+									<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/border-color">https://developer.mozilla.org/en-US/docs/Web/CSS/border-color</a></li>
+								</ul>
+							</span>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">border properties</h4>
+					<p>border properties can be used separately or as a <em>shorthand property border</em> to combine these into one line (giving the three values in any order)</p>
+					<div style="margin: 0 auto; float: none;text-align: left; font-size: 0.7em; border: 1px solid gray; width: 50%">
+						<code>
+							figure { <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;border-style: solid; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;border-width: 3px; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;border-color: red; <br/>
+							} <br/><br/>
+							figure { <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;border: solid red 3px; <br/>
+							}
+						</code>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">line-height</h4>
+					<ul style="font-size: 0.65em">
+						<li>sets the amount of space used for lines, such as in text</li>
+						<li>on block-level elements, it specifies the minimum height of line boxes within the element</li>
+						<li>on non-replaced inline elements, it specifies the height that is used to calculate line box height</li>
+						<li>look at the demo at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/line-height">https://developer.mozilla.org/en-US/docs/Web/CSS/line-height</a></li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">font-family</h4>
+					<ul style="font-size: 0.65em">
+						<li>specifies a prioritized list of one or more font family names and/or generic family names for the selected elements</li>
+						<li>the list of fonts are tried in-order until the browser finds one available on the user's system</li>
+						<li>there are six generic font families and your list must end with one of them since it's guaranteed to work</li>
+						<li>look at the demo at <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-family">https://developer.mozilla.org/en-US/docs/Web/CSS/font-family</a></li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">CSS Box Model</h4>
+					<p>&lt;h2&gt;Element Contents&lt;/h2&gt; Example</p>
+					<div style="margin: 0 auto; float: none;text-align: left; font-size: 0.5em; border: 1px solid gray; width: 50%">
+						<code>
+							h2 { <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;padding: 1em; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;border: medium dashed black;<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;background-color: grey;<br/>
+							}
+						</code>
+					</div>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/boxmodel.svg" alt="CSS Box Model" width="800">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/boxmodel.svg</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">CSS Units</h4>
+					<dl style="font-size: 0.8em">
+						<dt id="em"><code class="css dfn">em</code></dt>
+						<dd>The current font size: if the current text is 12&nbsp;point then this will be 12 points. Another unit, an <code class="css dfn">ex</code> is half the text size.</dd>
+						<dt id="px"><code class="css dfn">px</code></dt>
+						<dd>One screen pixel (dot) on the display. (Note: for some very high resolution devices, real “pixels” are very small, so this length is adjusted to be close to the size of a pixel on a traditional display.)</dd>
+						<dt id="mm"><code class="css dfn">mm</code></dt>
+						<dd>A millimetre. There are also units for centimetre, inch, etc. (Note: this is the browsers best guess, but might be innacurate depending on the scaling of the display/projector/phone/etc. For example if you display your screen on a projector, the “millimetre” suddenly becomes much larger.)</dd>
+					</dl>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">HTML Example Code</h4>
+					<img src="img/htmlc7.png" alt="HTML Example" width="810">
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">CSS Example Code</h4>
+					<div style="margin: 0 auto; float: none;text-align: left; font-size: 0.5em; border: 1px solid gray; width: 70%">
+						<code>
+							body { <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;font-family: "Helvetica", sans-serif; <br/>
+							}<br/>
+							h1 {<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;text-align: center;<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;font-weight: bold;<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;background-color: silver;<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;color: teal;<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;padding: 0.25em;<br/>
+							}<br/>
+							h2 {<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;border: medium dotted teal;<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;font-weight: normal;<br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;padding: 0.1em;<br/>
+							}
+						</code>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Example Code Result</h4>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/css-prop-result.png" alt="HTML+CSS Example" width="800">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/css-prop-result.png</small>
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* try the result at <a
+							href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/css-prop-page.html">css-prop-page.html</a></small>
+
+				</section>
+				<!--
+				<section>
+					<h4 style="border-bottom: 1px solid gray"></h4>
+					<img src="" alt="" width="700">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from </small>
+				</section>
+				<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
