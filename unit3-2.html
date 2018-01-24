@@ -46,11 +46,11 @@
 						<li style="opacity: 0.5">CSS Properties</li>
 						<li style="opacity: 1.0">CSS Selectors</li>
 						<li style="opacity: 1.0">Colors in CSS</li>
-						<li style="opacity: 1.0">Styling Pages with CSS</li>
-						<li style="opacity: 1.0">Browser Compatibility</li>
-						<li style="opacity: 1.0">Separating Content and Appearance</li>
-						<li style="opacity: 1.0">CSS Fonts [optional content]</li>
-						<li style="opacity: 1.0">Interactive Color Mixer [optional content]</li>
+						<li style="opacity: 0.5">Styling Pages with CSS</li>
+						<li style="opacity: 0.5">Browser Compatibility</li>
+						<li style="opacity: 0.5">Separating Content and Appearance</li>
+						<li style="opacity: 0.5">CSS Fonts [optional content]</li>
+						<li style="opacity: 0.5">Interactive Color Mixer [optional content]</li>
 					</ol>
 				</section>
 				<section>
@@ -169,8 +169,96 @@
 					</div>
 				</section>
 				<section>
-					<h4 style="border-bottom: 1px solid gray">Colours in CSS</h4>
+					<h4 style="border-bottom: 1px solid gray">Colors in CSS</h4>
+                    <p>
+                        by far we have seen <code>&quot;color&quot;</code>, <code>&quot;background-color&quot;</code>, and <code>&quot;border-color&quot;</code> which are using different color values, lets learn more about these values.
+                    </p>
 				</section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Color Schemes</h4>
+                    <ul>
+                        <li>CMYK color model (subtractive colour model)</li>
+                        <li>RGB colour model (additive colour model)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">CMYK Color Model</h4>
+                    <p>the physical paint (used to draw paintings) removes parts of the reflected light
+                        (usually the original color of light is white!)
+                        from the surface of the painting canvas, <br/>
+                        main colors:
+                    </p>
+                    <ul>
+                        <li style="color: cyan">Cyan (Blue)</li>
+                        <li style="color: magenta">Magenta (red)</li>
+                        <li style="color: yellow">Yellow</li>
+                        <li style="color: black">Black</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">RGB Color Model</h4>
+                    <p>
+                        computer screens do not reflect the light, they produce it!<br/>
+                        they start from black, and add colors to it to make the desired color, <br/>
+                        main colors:
+                    </p>
+                    <ul>
+                        <li style="color: red">Red</li>
+                        <li style="color: green">Green</li>
+                        <li style="color: blue">Blue</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Working with RGB</h4>
+                    <ul>
+                        <li>we will use the three-character method of specifying a CSS color</li>
+                        <li><span>
+                            the amount of each primary colour is specified with a character on this scale:
+                            <ul>
+                                <li><strong>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, a, b, c, d, e, f</strong></li>
+                                <li>the <strong>0</strong> end of the scale is little of the color (dark/off)</li>
+                                <li>the <strong>f</strong> end is a lot of the colour (bright/on)</li>
+                            </ul>
+                        </span></li>
+                        <li>the three primary colors are specified in the order red, green, blue, prefixed with a <code>#</code></li>
+                        <li>example: <span style="color: #f70">#F70</span></li>
+                    </ul>
+                </section>
+                <section>
+                    <img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/colour1.svg" alt="Red Color Range" width="600">
+                    <small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/colour1.svg</small>
+
+
+                    <img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/colour2.svg" alt="Black_and_White Color Range" width="600">
+                    <small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/colour2.svg</small>
+
+
+                    <img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/colour3.svg" alt="Red_to_white Color Range" width="600">
+                    <small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/colour3.svg</small>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Let's guess the colors!</h4>
+                    <table style="font-size: 0.6em">
+                        <thead><tr><th scope="col">Code</th><th scope="col">Colour</th><th scope="col">Rationale</th></tr></thead>
+                        <tbody>
+                        <tr><td><code class="css">#000</code></td><td>black</td><td>as dark as possible</td></tr>
+                        <tr><td><code class="css">#fff</code></td><td>white</td><td>as bright as possible</td></tr>
+                        <tr><td><code class="css">#f00</code></td><td>red</td><td>only red light</td></tr>
+                        <tr><td><code class="css">#0f0</code></td><td>green</td><td>only green light</td></tr>
+                        <tr><td><code class="css">#00f</code></td><td>blue</td><td>only blue light</td></tr>
+                        <tr><td><code class="css">#060</code></td><td>dark green</td><td>a little green, no red or blue</td></tr>
+                        <tr><td><code class="css">#99f</code></td><td>light blue</td><td>more blue than the others, closer to white</td></tr>
+                        </tbody>
+                    </table>
+                    <hr/>
+                    <small>try your guess here: <a
+                            href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/content/css-mixer.html">Interactive Color Mixer</a></small>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Other Ways to Specify Colour</h4>
+                    <img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/colour6.svg" alt="Other Ways to Specify Colour" width="400">
+                    <small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/colour6.svg</small>
+                </section>
 				<!--
 				<section>
 					<h4 style="border-bottom: 1px solid gray"></h4>
