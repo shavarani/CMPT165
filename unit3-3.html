@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 3-3</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+		<style>
+			.titillium {
+				font-family: 'Titillium Web', sans-serif;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit3: Stylesheets</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+						<li style="opacity: 0.5">Styles</li>
+						<li style="opacity: 0.5">CSS Basics</li>
+						<li style="opacity: 0.5">CSS Properties</li>
+						<li style="opacity: 0.5">CSS Selectors</li>
+						<li style="opacity: 0.5">Colors in CSS</li>
+						<li style="opacity: 0.5">Styling Pages with CSS</li>
+						<li style="opacity: 1.0">Browser Compatibility</li>
+						<li style="opacity: 1.0">Separating Content and Appearance</li>
+						<li style="opacity: 1.0">CSS Fonts [optional content]</li>
+						<li style="opacity: 1.0">Interactive Color Mixer [optional content]</li>
+					</ol>
+				</section>
+				<section>
+					<p>when you test a piece of code locally<br/>you have tested it:</p>
+					<ul>
+						<li>with your particular browser (Firefox, Chrome, etc)</li>
+						<li>in the version of the browser you have</li>
+						<li>with your browser window size</li>
+						<li>with the fonts, plugins, etc. that you have installed </li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">CSS Validation</h4>
+					you will need to validate your developed CSS using <br/><a
+						href="https://jigsaw.w3.org/css-validator/">CSS Validator</a><br/><br/>
+					<small>however, for CSS, the situation can be more complicated when it comes to actually working in different browsers</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Handle Browser Inconsistencies</h4>
+					you need to use a <a href="https://meyerweb.com/eric/tools/css/reset/">reset stylesheet</a> (a pre-prepared stylesheet that remove all of the defaults set by browsers) to reduce browser inconsistencies
+					<br/><br/>
+					<div style="margin: 0 auto; float: none;text-align: left; font-size: 0.7em; border: 1px solid gray; width: 80%">
+						<code>
+							&lt;link rel=&quot;stylesheet&quot; href=&quot;reset.css&quot; /&gt; <br/>
+							&lt;link rel=&quot;stylesheet&quot; href=&quot;my-style.css&quot; /&gt;
+						</code>
+					</div>
+					<br/>
+					<small><a href="https://raw.githubusercontent.com/necolas/normalize.css/master/normalize.css">Normalize.css</a> is an alternative to the reset stylesheet mentioned above</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Browser Compatibility</h4>
+					<p>
+						the question is whether each browser supports <br/> the CSS features you use or not
+					</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">HTML Browser Compatibility</h4>
+					the only HTML compatibility issues will come from older versions of Internet Explorer <br/><br/>
+					<small>for this course, we will happily ignore old IE versions and move on</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">CSS Browser Compatibility</h4>
+					for css you can use <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference">the CSS Reference</a> which helps you to understand the compatibilities
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/compat1.png" alt="CSS Compatibility" width="600">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/compat1.png</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Testing Tips</h4>
+					<ul>
+						<li>resize your browser window</li>
+						<li>try a different browser</li>
+						<li>try a mobile device</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Basic Ideas of Separating Content and Appearance</h4>
+					<p>when writing HTML</p>
+					<ul style="font-size: 0.7em">
+						<li>think about your content, not the way you want it to look</li>
+						<li>
+							choose tags so their meaning matches your content
+						</li>
+						<li>
+							if the tags aren't specific enough, add a
+							<code class="html">class</code> or <code class="html">id</code>
+							to distinguish particular elements as semantically-different
+						</li>
+						<li>
+							choose <code class="html">class</code> and <code class="html">id</code>
+							values to reflect meaning as well, not to describe an appearance
+						</li>
+						<li>
+							if no existing tag matches the content you have, use a generic tag
+							(<code class="html">&lt;div&gt;</code> or <code class="html">&lt;span&gt;</code>)
+							with a meaningful <code class="html">class</code> or <code class="html">id</code>
+						</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Basic Ideas of Separating Content and Appearance</h4>
+					<p>when writing CSS</p>
+					<ul style="font-size: 0.7em">
+						<li>Use CSS to specify how you want pieces of content to look, in a separate <code class="file">.css</code> file.</li>
+						<li>If you need to, go back and add markup (especially <code class="html">class</code> or <code class="html">id</code> attributes) to your HTML as you're creating your CSS. Don't slip into saying things about appearance in your HTML when doing this.</li>
+						<li>Don't use the <code class="html">&lt;style&gt;</code> tag or HTML <code class="html">style</code> property, which mix style information back into your HTML. If your reference uses these, find a better reference.</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">CSS Fonts</h4>
+					<p>as mentioned before, the CSS <code class="css">font-family</code> property <br/>
+						should be given a <strong>list</strong> of fonts, so the user's browser <br/>
+						can try several options to find <br/> the &quot;best&quot; one available on their computer</p>
+					<div style="margin: 0 auto; float: none;text-align: left; font-size: 0.7em; border: 1px solid gray; width: 85%">
+						<code>
+							font-family: &quot;Helvetica&quot;, &quot;Arial&quot;, sans-serif;
+						</code>
+					</div>
+					<p style="color: #f00;">
+						this <em>fall back</em> mechanism does not guarantee the same appearance every where!
+					</p>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Loading Fonts</h4>
+					you can use several online font repositories, most notably <a href="https://fonts.google.com/">Google Fonts</a>
+					<br/> <br/>
+					<div style="margin: 0 auto; float: none;text-align: left; font-size: 0.7em; border: 1px solid gray; width: 80%">
+						<code>
+							&lt;link rel=&quot;stylesheet&quot; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;href=&quot;https://fonts.googleapis.com/css? <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;family=Open+Sans:400,700&quot; /&gt; <br/>
+							&lt;link rel=&quot;stylesheet&quot; href=&quot;my-style.css&quot; /&gt;
+						</code>
+					</div>
+					<br/>
+					<div style="margin: 0 auto; float: none;text-align: left; font-size: 0.5em; border: 1px solid gray; width: 60%">
+						<code>
+							body { <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;font-family: "Open Sans", sans-serif; <br/>
+							}
+						</code>
+					</div>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Interactive Colour Mixer</h4>
+					An interactive demo of the concepts in color section can be found <a
+						href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/content/css-mixer.html">here</a>
+				</section>
+				<!--
+				<section>
+					<h4 style="border-bottom: 1px solid gray"></h4>
+					<img src="" alt="" width="700">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from </small>
+				</section>
+				<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
