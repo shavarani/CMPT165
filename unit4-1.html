@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 4-1</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+		<style>
+			.titillium {
+				font-family: 'Titillium Web', sans-serif;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit4: Intro to JavaScript</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+						<li style="opacity: 1.0">Programming and Web Pages</li>
+						<li style="opacity: 1.0">JavaScript Basics</li>
+						<li style="opacity: 0.5">Variables and Functions</li>
+						<li style="opacity: 0.5">The jQuery Library</li>
+						<li style="opacity: 0.5">Working with jQuery</li>
+						<li style="opacity: 0.5">Events and Behaviour</li>
+						<li style="opacity: 0.5">Why doesn't my code work?</li>
+					</ol>
+				</section>
+				<section>
+                    HTML and CSS are used to construct simple web pages <br/>
+                    <strong>but we haven't yet programmed !</strong> <br/>
+                    JavaScript will give us a way to express <br/>
+                    <strong>behaviour for pages</strong>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">What is JavaScript?</h4>
+                    a <strong>programming language</strong><br/>incorporated into web browsers <br/> used to describe the behaviour of the web pages
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">What is a programming language?</h4>
+                    a way to describe to a computer some behaviour; <br/>
+                    some calculation or other action that you want to computer to do for you (a program)
+                </section>
+                <section>
+                    all of the programming languages do the same job
+                    <br/>of letting the programmer express instructions
+                    <br/>for some behaviour in a precise-enough way
+                    <br/>that the computer can actually follow them
+                </section>
+                <section>
+                    what is the difference between <br/> a <strong>programming language</strong> and a <strong>markup/style language</strong> ?
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">What can we do using JavaScript?</h4>
+                    <ul>
+                        <li>modify the current HTML page <br/>(adding, removing, or changing content)</li>
+                        <br/>
+                        <li>respond to user events <br/>(like entering some text, or clicking somewhere)</li>
+                        <br/>
+                        <li>express the logic of an intended action by putting the two points above together</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3 style="border-bottom: 1px solid gray">JavaScript Basics</h3>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">&lt;script&gt; tag</h4>
+                    <p>links a JavaScript file to the HTML codes</p>
+                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray">
+                        <code>
+                            &lt;head&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset=&quot;UTF-8&quot; /&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Page with a style sheet&lt;/title&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;script src=&quot;first-code.js&quot; /&gt; <br/>
+                            &lt;/head&gt;
+                        </code>
+                    </div>
+                    <br/>
+                    <small>let's take a look at an HTML page linked to <code>first-code.js</code> <br/> containing an <code>alert</code> function call
+                        <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/first-codepage.html">here</a></small>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">&lt;script&gt; tag</h4>
+                    <p>you can also put a JavaScript code in the &lt;script&gt; tag</p>
+                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray">
+                        <code>
+                            &lt;head&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;meta charset=&quot;UTF-8&quot; /&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;title&gt;Page with a style sheet&lt;/title&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;script&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alert('Hello world!'); <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/script&gt; <br/>
+                            &lt;/head&gt;
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Function</h4>
+                    a function represents some logic that we can run <br/>by calling the function <br/>
+                    (mentioning a function by name with parenthesis after it) <br/><br/>
+                    the <code>alert</code> function is built into JavaScript <br/>
+                    we can have our own defined functions as well
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Function Arguments</h4>
+                    arguments are the values that the function needs to be able to do its work <br/> <br/>
+                    we put whatever arguments the function needs to run inside the parenthesis while calling the function
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Controlling Execution</h4>
+                </section>
+                <section>
+                    do we really want all of the behavioural code be executed while the page loads ? <br/><br/>
+                    what should we do if we want to respond to a user action after the page loads ?
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Function Declaration</h4>
+                    a way of preparing whatever needs to be done in a ready-to-execute package ! <br/> <br/>
+                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray; width: 50%; margin: 0 auto;">
+                        <code>
+                            say_hello = function() { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;alert('Hello world!'); <br/>
+                            }
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">onclick attribute</h4>
+                    a HTML attribute which guides the browser to call a JavaScript code upon click <strong>event</strong>!
+                    <img src="img/htmlc9.png" alt="" width="800">
+                    <small>
+                        lets try this code <a
+                            href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/event.html">here</a>
+                    </small>
+                </section>
+				<!--
+				<section>
+					<h4 style="border-bottom: 1px solid gray"></h4>
+					<img src="" alt="" width="700">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from </small>
+				</section>
+				<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
