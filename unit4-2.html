@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 4-2</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+		<style>
+			.titillium {
+				font-family: 'Titillium Web', sans-serif;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit4: Intro to JavaScript</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+						<li style="opacity: 0.5">Programming and Web Pages</li>
+						<li style="opacity: 0.5">JavaScript Basics</li>
+						<li style="opacity: 1.0">Variables and Functions</li>
+						<li style="opacity: 0.5">The jQuery Library</li>
+						<li style="opacity: 0.5">Working with jQuery</li>
+						<li style="opacity: 0.5">Events and Behaviour</li>
+						<li style="opacity: 0.5">Why doesn't my code work?</li>
+					</ol>
+				</section>
+				<section>
+                    <h4 style="border-bottom: 1px solid gray">Variable Assignment Statement</h4>
+                    <p>a variable is a way to store a value in our program</p>
+                    <p>the = is used to assign to the variable</p>
+                    <p>it takes the value on the right and stores it in the variable named on the left</p>
+                </section>
+                <section>
+                    when a variable assignment statement runs <br/>
+                    the value is stored in the computer's memory <br/>
+                    and the variable name can be used to refer back to that value later
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Variable Types</h4>
+                    in JavaScript, any type of value can be stored in any variable, <br/>
+                    and there are many types the language supports
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Variable Types - Numbers</h4>
+                    <p>
+                        Numbers can be stored and calculated on in probably the obvious ways
+                    </p>
+                    <br/>
+                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray; width: 50%; margin: 0 auto;">
+                        <code>
+                            count = 7 <br/>
+                            pi = 3.1416 <br/>
+                            more = count + 1 <br/>
+                            twice_as_much = count * 2
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Variable Types - Strings</h4>
+                    <p>
+                        strings are sequences of characters (text)
+                    </p>
+                    <br/>
+                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray; width: 80%; margin: 0 auto;">
+                        <code>
+                            greeting = 'Hello' <br/>
+                            name = &quot;Becky B Barrington&quot; <br/>
+                            personal_greeting = greeting + ' ' + name
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Variable Types - Functions</h4>
+                    as we have seen, functions can be stored in variables
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Variable Types - Objects</h4>
+                    <p>
+                        an object is a value in JavaScript that can contain other things: <br/>
+                        numbers, strings, functions, other objects, ...
+                    </p>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Variable Types - Objects</h4>
+                    the type of information you're dealing with obviously affects what you can do with it <br/>
+                    For example, this code makes sense if <code>a</code> and <code>b</code> are both numbers: <br/>
+                    it will subtract the two values
+                    <br/>
+                    <br/>
+                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray; width: 30%; margin: 0 auto;">
+                        <code>
+                            result = a - b
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Functions</h4>
+                    <br/>
+                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray; width: 50%; margin: 0 auto;">
+                        <code>
+                            say_hello = function() { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;alert('Hello world!'); <br/>
+                            }
+                        </code>
+                    </div>
+                    <br/>
+                    <small>
+                        this code creates a variable named <code>say_hello</code>, this variable holds a <code>function</code>
+                    </small>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Functions</h4>
+                    a function contains some logic <br/>
+                    <ul>
+                        <li>it could be a particular calculation</li>
+                        <li>code you want to execute as the result of an event</li>
+                        <li>or any other sensible collection of logic</li>
+                    </ul>
+                    <br/>
+                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray; width: 50%; margin: 0 auto;">
+                        <code>
+                            function_name = function(optional arguments list) { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;... <br/>
+                            }
+                        </code>
+                    </div>
+                </section>
+
+				<!--
+				<section>
+					<h4 style="border-bottom: 1px solid gray"></h4>
+					<img src="" alt="" width="700">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from </small>
+				</section>
+				<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
