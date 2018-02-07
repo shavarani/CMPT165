@@ -50,6 +50,38 @@
 						<li style="opacity: 0.5">Why doesn't my code work?</li>
 					</ol>
 				</section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Functions</h4>
+                    <br/>
+                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray; width: 50%; margin: 0 auto;">
+                        <code>
+                            say_hello = function() { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;alert('Hello world!'); <br/>
+                            }
+                        </code>
+                    </div>
+                    <br/>
+                    <small>
+                        this code creates a variable named <code>say_hello</code>, this variable holds a <code>function</code>
+                    </small>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Functions</h4>
+                    a function contains some logic <br/>
+                    <ul>
+                        <li>it could be a particular calculation</li>
+                        <li>code you want to execute as the result of an event</li>
+                        <li>or any other sensible collection of logic</li>
+                    </ul>
+                    <br/>
+                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray; width: 90%; margin: 0 auto;">
+                        <code>
+                            function_name = function(optional arguments list) { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;... <br/>
+                            }
+                        </code>
+                    </div>
+                </section>
 				<section>
                     <h4 style="border-bottom: 1px solid gray">Variable Assignment Statement</h4>
                     <p>a variable is a way to store a value in our program</p>
@@ -62,7 +94,7 @@
                     and the variable name can be used to refer back to that value later
                 </section>
                 <section>
-                    <h4 style="border-bottom: 1px solid gray">Variable Types</h4>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Variable Types</h4>
                     in JavaScript, any type of value can be stored in any variable, <br/>
                     and there are many types the language supports
                 </section>
@@ -100,14 +132,23 @@
                     as we have seen, functions can be stored in variables
                 </section>
                 <section>
-                    <h4 style="border-bottom: 1px solid gray">Variable Types - Objects</h4>
+                    <h4 style="border-bottom: 1px solid gray">Variable Types</h4>
+                    Let's take a look at <a href="https://www.w3schools.com/js/js_variables.asp">this important points [*]</a> regarding the variables in JavaScript
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Javascript Objects</h4>
                     <p>
                         an object is a value in JavaScript that can contain other things: <br/>
                         numbers, strings, functions, other objects, ...
                     </p>
+                    <p>
+                        the two important types of the objects we are interested in are <em><a
+                            href="https://www.w3schools.com/js/js_arrays.asp">arrays</a></em> and <em><a
+                            href="https://www.w3schools.com/js/js_json_intro.asp">JSON objects</a></em>
+                    </p>
                 </section>
                 <section>
-                    <h4 style="border-bottom: 1px solid gray">Variable Types - Objects</h4>
+                    <h4 style="border-bottom: 1px solid gray">Javascript Objects</h4>
                     the type of information you're dealing with obviously affects what you can do with it <br/>
                     For example, this code makes sense if <code>a</code> and <code>b</code> are both numbers: <br/>
                     it will subtract the two values
@@ -120,38 +161,514 @@
                     </div>
                 </section>
                 <section>
-                    <h4 style="border-bottom: 1px solid gray">JavaScript Functions</h4>
-                    <br/>
-                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray; width: 50%; margin: 0 auto;">
-                        <code>
-                            say_hello = function() { <br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;alert('Hello world!'); <br/>
-                            }
-                        </code>
+                    <h4 style="border-bottom: 1px solid gray">The Browser Object Model (BOM)</h4>
+                    <p>the Browser Object Model (BOM) allows JavaScript to <em>&quot;talk to&quot;</em> the browser</p>
+                    <p>it is served through the <em><strong><code>window</code></strong></em> object</p>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray"><code>window</code> object</h4>
+                    <div>
+                        here are the most important elements of <br/> the <code>window</code> object
+                        <ul>
+                            <li><code><a href="https://www.w3schools.com/js/js_htmldom_document.asp">window.document</a></code></li>
+                            <li><code><a href="https://www.w3schools.com/js/js_window_screen.asp">window.screen</a></code></li>
+                            <li><code><a href="https://www.w3schools.com/js/js_window_location.asp">window.location</a></code></li>
+                            <li><code><a href="https://www.w3schools.com/js/js_window_history.asp">window.history</a></code></li>
+                            <li><code><a href="https://www.w3schools.com/js/js_window_navigator.asp">window.navigator</a></code></li>
+                            <li><code><a href="https://www.w3schools.com/js/js_popup.asp">window.alert()</a></code></li>
+                            <li><code><a href="https://www.w3schools.com/js/js_timing.asp">window.setTimeout(function, milliseconds)</a></code></li>
+                        </ul>
                     </div>
-                    <br/>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">The HTML DOM <code>document</code> Object</h4>
+                    <p>the object which represents your webpage parsed model</p>
+                    <p>lets look at its use cases <a href="https://www.w3schools.com/js/js_htmldom_document.asp">here</a></p>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray"><code>console</code> Object</h4>
+                    <p>
+                        The Console object provides access to the browser's debugging console
+                    </p>
+                    <p>lets look at its use cases <a href="https://www.w3schools.com/jsref/obj_console.asp">here</a></p>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Operators Types</h4>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Arithmetic Operators</h4>
+                    <table style="font-size: 0.8em">
+                        <tbody><tr>
+                            <th style="width:25%">Operator</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>+</td>
+                            <td>Addition</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Subtraction</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>Multiplication</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>Division</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Modulus (Remainder)</td>
+                        </tr>
+                        <tr>
+                            <td>++</td>
+                            <td>Increment</td>
+                        </tr>
+                        <tr>
+                            <td>--</td>
+                            <td>Decrement</td>
+                        </tr>
+                        </tbody></table>
+                    <hr/>
+
                     <small>
-                        this code creates a variable named <code>say_hello</code>, this variable holds a <code>function</code>
+                        content from <a href="https://www.w3schools.com/js/js_operators.asp">https://www.w3schools.com/js/js_operators.asp</a>
                     </small>
                 </section>
                 <section>
-                    <h4 style="border-bottom: 1px solid gray">JavaScript Functions</h4>
-                    a function contains some logic <br/>
-                    <ul>
-                        <li>it could be a particular calculation</li>
-                        <li>code you want to execute as the result of an event</li>
-                        <li>or any other sensible collection of logic</li>
-                    </ul>
-                    <br/>
-                    <div style="text-align: left; font-size: 0.7em; border: 1px solid gray; width: 90%; margin: 0 auto;">
-                        <code>
-                            function_name = function(optional arguments list) { <br/>
-                            &nbsp;&nbsp;&nbsp;&nbsp;... <br/>
-                            }
-                        </code>
-                    </div>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Assignment Operators</h4>
+                    <table style="font-size: 0.8em">
+                        <tbody>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Example</th>
+                            <th>Same As</th>
+                        </tr>
+                        <tr>
+                            <td>=</td>
+                            <td>x = y</td>
+                            <td>x = y</td>
+                        </tr>
+                        <tr>
+                            <td>+=</td>
+                            <td>x += y</td>
+                            <td>x = x + y</td>
+                        </tr>
+                        <tr>
+                            <td>-=</td>
+                            <td>x -= y</td>
+                            <td>x = x - y</td>
+                        </tr>
+                        <tr>
+                            <td>*=</td>
+                            <td>x *= y</td>
+                            <td>x = x * y</td>
+                        </tr>
+                        <tr>
+                            <td>/=</td>
+                            <td>x /= y</td>
+                            <td>x = x / y</td>
+                        </tr>
+                        <tr>
+                            <td>%=</td>
+                            <td>x %= y</td>
+                            <td>x = x % y</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <hr/>
+                    <small>
+                        content from <a href="https://www.w3schools.com/js/js_operators.asp">https://www.w3schools.com/js/js_operators.asp</a>
+                    </small>
+                </section>
+                <section>
+                        <h4 style="border-bottom: 1px solid gray">JavaScript Comparison Operators</h4>
+                        <table style="font-size: 0.8em">
+                            <tbody><tr>
+                                <th>Operator</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>==</td>
+                                <td>equal to</td>
+                            </tr>
+                            <tr>
+                                <td>===</td>
+                                <td>equal value and equal type</td>
+                            </tr>
+                            <tr>
+                                <td>!=</td>
+                                <td>not equal</td>
+                            </tr>
+                            <tr>
+                                <td>!==</td>
+                                <td>not equal value or not equal type</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;</td>
+                                <td>greater than</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;</td>
+                                <td>less than</td>
+                            </tr>
+                            <tr>
+                                <td>&gt;=</td>
+                                <td>greater than or equal to</td>
+                            </tr>
+                            <tr>
+                                <td>&lt;=</td>
+                                <td>less than or equal to</td>
+                            </tr>
+                            <tr>
+                                <td>?</td>
+                                <td>ternary operator</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    <hr/>
+                    <small>
+                        content from <a href="https://www.w3schools.com/js/js_operators.asp">https://www.w3schools.com/js/js_operators.asp</a>
+                    </small>
                 </section>
 
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">JavaScript Operators Precedence</h4>
+                    <div style="height: 550px; overflow-y: scroll">
+                        <table style="font-size: 0.8em">
+                            <tbody><tr>
+                                <th style="width:10%">Value</th>
+                                <th style="width:15%">Operator</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>( )</td>
+                                <td>Expression grouping</td>
+                                <td>(3 + 4)</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>.</td>
+                                <td>Member</td>
+                                <td>person.name</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>[]</td>
+                                <td>Member</td>
+                                <td>person["name"]</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>()</td>
+                                <td>Function call</td>
+                                <td>myFunction()</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>new</td>
+                                <td>Create</td>
+                                <td>new Date()</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>++</td>
+                                <td>Postfix Increment</td>
+                                <td>i++</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>--</td>
+                                <td>Postfix Decrement</td>
+                                <td>i--</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>++</td>
+                                <td>Prefix Increment</td>
+                                <td>++i</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>--</td>
+                                <td>Prefix Decrement</td>
+                                <td>--i</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>!</td>
+                                <td>Logical not</td>
+                                <td>!(x==y)</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>typeof</td>
+                                <td>Type</td>
+                                <td>typeof x</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>*</td>
+                                <td>Multiplication</td>
+                                <td>10 * 5</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>/</td>
+                                <td>Division</td>
+                                <td>10 / 5</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>%</td>
+                                <td>Modulo division</td>
+                                <td>10 % 5</td>
+                            </tr>
+                            <tr class="w3-pale-red">
+                                <td>14</td>
+                                <td>**</td>
+                                <td>Exponentiation</td>
+                                <td>10 ** 2</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>+</td>
+                                <td>Addition</td>
+                                <td>10 + 5</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>-</td>
+                                <td>Subtraction</td>
+                                <td>10 - 5</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>&lt;&lt;</td>
+                                <td>Shift left</td>
+                                <td>x &lt;&lt; 2</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>&gt;&gt;</td>
+                                <td>Shift right</td>
+                                <td>x &gt;&gt; 2</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>&gt;&gt;&gt;</td>
+                                <td>Shift right (unsigned)</td>
+                                <td>x &gt;&gt;&gt; 2</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>&lt;</td>
+                                <td>Less than</td>
+                                <td>x &lt; y&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>&lt;=</td>
+                                <td>Less than or equal</td>
+                                <td>x &lt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>&gt;</td>
+                                <td>Greater than</td>
+                                <td>x &gt; y</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>&gt;=</td>
+                                <td>Greater than or equal</td>
+                                <td>x &gt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>==</td>
+                                <td>Equal</td>
+                                <td>x == y</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>===</td>
+                                <td>Strict equal</td>
+                                <td>x === y</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>!=</td>
+                                <td>Unequal</td>
+                                <td>x != y</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>!==</td>
+                                <td>Strict unequal</td>
+                                <td>x !== y</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>&amp;&amp;</td>
+                                <td>Logical and</td>
+                                <td>x &amp;&amp; y</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>||</td>
+                                <td>Logical or</td>
+                                <td>x || y</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>=</td>
+                                <td>Assignment</td>
+                                <td>x = y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>+=</td>
+                                <td>Assignment</td>
+                                <td>x += y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>-=</td>
+                                <td>Assignment</td>
+                                <td>x -= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>*=</td>
+                                <td>Assignment</td>
+                                <td>x *= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>%=</td>
+                                <td>Assignment</td>
+                                <td>x %= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>&lt;&lt;=</td>
+                                <td>Assignment</td>
+                                <td>x &lt;&lt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>&gt;&gt;=</td>
+                                <td>Assignment</td>
+                                <td>x &gt;&gt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>&gt;&gt;&gt;=</td>
+                                <td>Assignment</td>
+                                <td>x &gt;&gt;&gt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>&amp;=</td>
+                                <td>Assignment</td>
+                                <td>x &amp;= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>^=</td>
+                                <td>Assignment</td>
+                                <td>x ^= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>|=</td>
+                                <td>Assignment</td>
+                                <td>x |= y</td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                    <hr/>
+                    <small>
+                        content from <a href="https://www.w3schools.com/js/js_arithmetic.asp">https://www.w3schools.com/js/js_arithmetic.asp</a>
+                    </small>
+                </section>
+                <section>
+                    <h4 style="border-bottom: 1px solid gray">Commenting On The Code</h4>
+                    <p>you may leave comments on your code while developing using JavaScript <br/>
+                        You can learn about commenting syntax over <a href="https://www.w3schools.com/js/js_comments.asp">here</a>
+                    </p>
+                </section>
 				<!--
 				<section>
 					<h4 style="border-bottom: 1px solid gray"></h4>
