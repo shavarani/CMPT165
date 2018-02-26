@@ -99,6 +99,68 @@
 							jquery_doc.ready(setup)
 						</code>
 					</div>
+					<br/>
+					<small>
+						The string <code>&quot;p&quot;</code> given to the <em>jQuery function</em> is a selector (or <em>jQuery selector</em> to be more specific)
+					</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray"><code>jQuery</code> selectors</h4>
+					designed to work like CSS selectors <br/>
+					because most developers already know <br/> how to use CSS selectors
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray"><code>jQuery</code> selectors vs. CSS Selectors</h4>
+					There are some differences between <br/> CSS selectors and jQuery selectors <br/>
+					but <strong>for now</strong> you can safely assume they are the same <br/>
+					<br/>
+					<small>
+						* The differences are mostly that <code>jQuery</code> extends things so you can specify things in <code>jQuery</code> that won't work in CSS,
+						for more details look at <a href="http://api.jquery.com/category/selectors/">here</a>
+					</small>
+				</section>
+				<section>
+					After calling the <code>jQuery</code> selector, what it gives back is a <code>jQuery</code> object
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Modifying the Page Example</h4>
+					<div style="text-align: left; font-size: 0.7em; border: 1px solid gray">
+						<code>
+							p_click = function() { <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;jQuery('#changeme').html('Somebody clicked me.') <br/>
+							} <br/>
+							h1_hover = function() { <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;jQuery('#changeme').html('Mouse &lt;em&gt;over&lt;/em&gt; the &amp;lt;h1&amp;gt;.') <br/>
+							} <br/>
+							setup = function() { <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;jQuery('#changeme').click(p_click) <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;jQuery('h1').mouseover(h1_hover) <br/>
+							} <br/>
+							jQuery(document).ready(setup)
+						</code>
+					</div>
+					<small>
+						* To try this code look at <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide//files/manipulate.html">here</a>
+					</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Events</h4>
+					An <em>event</em> in HTML is triggered by certain things that the user does, or that happens in the browser, lets look at some event categories:
+					<br/>
+					<ul>
+						<li><a href="https://api.jquery.com/category/events/mouse-events/">Mouse Events Category</a></li>
+						<li><a href="https://api.jquery.com/category/events/keyboard-events/">Keyboard Events Category</a></li>
+						<li><a href="https://api.jquery.com/category/events/browser-events/">Browser Events Category</a></li>
+						<li><a href="https://api.jquery.com/category/events/document-loading/">Document Loading Functions Category</a></li>
+					</ul>
+					<br/>
+					<br/>
+					<small>
+						* <a href="https://stackoverflow.com/questions/12627443/jquery-click-vs-onclick/12627478#12627478">here</a> we can see how to attach an event handler in JavaScript code
+						<br/>if not using <code>jQuery</code> event attaching mechanism
+						<br/>
+						* <a href="https://api.jquery.com/category/events/event-object/">here</a> you can find a reference to the <em>Event Object</em> descriptions
+					</small>
 				</section>
 				<!--
 				<section>
