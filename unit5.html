@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 5</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+		<style>
+			.titillium {
+				font-family: 'Titillium Web', sans-serif;
+			}
+		</style>
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit5: Graphics</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+						<li style="opacity: 1.0">Using Images on Web Pages</li>
+						<li style="opacity: 1.0">Image Formats</li>
+						<li style="opacity: 1.0">Bitmap Image Formats</li>
+					</ol>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The <code>&lt;img&gt;</code> Tag Example Again</h4>
+					<div style="text-align: left; font-size: 0.7em; border: 1px solid gray">
+						<code>
+							&lt;p&gt; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;http://example.com/vacation.jpg&quot; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;alt=&quot;My vacation&quot; /&gt;<br/>
+							&lt;/p&gt; <br/>
+							&lt;br/&gt; <br/>
+							&lt;p&gt; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src=&quot;pics/vacation.jpg&quot; alt=&quot;My vacation&quot; /&gt;<br/>
+							&lt;/p&gt;
+						</code>
+					</div>
+					<small>
+						* <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img">the HTML reference for <code>&lt;img&gt;</code> Tag</a>
+					</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray"><code>&quot;alt&quot;</code>, <code>&quot;width&quot;</code>, and <code>&quot;height&quot;</code> attributes</h4>
+					<dl>
+						<dt><code>&quot;alt&quot;</code></dt>
+						<dd style="font-size: 0.8em">
+							is a necessity if the image actually <em>conveys any content</em><br/>
+							so if the image actually has some meaning <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;then alt should be a <em>text-equivalent</em> of that meaning <br/><br/>
+						</dd>
+						<dt><code>&quot;width&quot;</code> and <code>&quot;height&quot;</code></dt>
+						<dd style="font-size: 0.8em">
+							used to give the browser a hint about how big the image is; <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;how much space it will take up on the page <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;this way the browser will quickly fill the page <br/>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;with an empty rectangle where the image goes <br/>
+							both values are given in pixels
+						</dd>
+					</dl>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Important hint about <code>&quot;width&quot;</code> and <code>&quot;height&quot;</code></h4>
+					you should <strong>not</strong> use <strong>width</strong> and <strong>height</strong> <br/>
+					to change the size of an image
+					<br/><br/>
+					if you want the image to be a different size, then it should be scaled in an image editor
+				</section>
+				<section>
+					when adding images to your web pages <br/>
+					it can be very easy to create pages <br/>
+					that take an annoying amount of time to load <br/><br/>
+					<small>
+						for a page containing 5 images of size 2MB each
+						<ul>
+							<li>~ 2-4 seconds on computer</li>
+							<li>&gt;8 seconds on mobile (with a descent connection)</li>
+						</ul>
+					</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The Problem</h4>
+					if the total amount of data that must be downloaded is too large (e.g. 5 images of size 2MB each)
+					<br/>
+					the page will take much longer to be loaded
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">The Solution</h4>
+					scale-down the images!
+				</section>
+				<section>
+					when creating pages, keep the total size of files <br/>
+					<em>(HTML + CSS + images + JavaScript + …)</em> <br/>less than
+					<a href="https://css-tricks.com/poll-results-ideal-page-size/">1MB</a>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Image Formats</h4>
+					different ways to represent images <br/>
+					in a computer (and on web pages)
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Bitmap and Vector Images</h4>
+					<dl>
+						<dt>Vector Image</dt>
+						<dd>represented as a collection of shapes: lines, curves, circles, squares, etc. (left red circle)</dd>
+						<dt>Bitmap Image</dt>
+						<dd>represented as a grid of pixels each of which is given a particular colour (right red circle)</dd>
+					</dl>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/vector-bitmap2.svg"
+						 alt="Vector-Bitmap-Red-Circles"/>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Bitmap and Vector Images (Zoomed Example)</h4>
+					<dl>
+						<dt>vector description of the left image:</dt>
+						<dd>a circle with a black outline and red fill, with centre at (...px, ...px) and radius of ...px </dd>
+						<dt>bitmap description of the right image: </dt>
+						<dd>a collection of coloured square pixels</dd>
+					</dl>
+					<br/><br/>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/vector-bitmap2.svg"
+						 alt="Vector-Bitmap-Red-Circles" width="350px"/>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Vector Image Format Advantages</h4>
+						<ul>
+							<li>
+								<span>Shorter download time</span>
+								<ul>
+									<li>Vector Image Example ~ 2KB</li>
+									<li>Bitmap Image Example ~ 11KB</li>
+								</ul>
+							</li>
+							<li>
+								<span>More smooth scaling when being printed, or on high-resolution displays</span>
+							</li>
+						</ul>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/phone-icon.svg"
+						 alt="Phone Icon"/>
+					<small style="font-size: 0.5em">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/phone-icon.svg</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Vector Image Format Disadvantages</h4>
+					not all images make sense as a vector image! <!--<br/>
+					Since vector formats are best at the shapes they can represent (curves, lines, circles, etc.)
+					images that aren't made up of those shapes might not be a good fit in a vector image-->
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/phone-pic.jpg"
+						 alt="Phone Picture"/>
+					<small style="font-size: 0.5em">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/phone-pic.jpg</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Image Vectorization</h4>
+					an automatic attempt to turn the image <br/>
+					into vector shapes <br/>
+					<strong>not all the images can be easily converted <br/> to the vector format</strong> <br/>
+					<small>In such cases the image size drastically increases! (here 12KBs to 54KBs)</small>
+					<br/>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/phone-pic-traced.svg"
+						 alt="Phone Pictured Traced"/>
+					<small style="font-size: 0.5em">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/phone-pic-traced.svg</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Scalable Vector Graphics (.SVG) format</h4>
+					the only vector image format that is relevant to the web; <br/>
+					we will work more with SVG later in the course
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Bitmap Image Example</h4>
+					as mentioned before a bitmap image is made up of <br/> a grid of pixels <br/>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/compression2.png"
+						 alt="Bitmap Image" width="800"/>
+					<small style="font-size: 0.5em">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/compression2.png</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Bitmap Image Contents - Basic Idea</h4>
+					<p style="text-align: left">
+						row 1: white pixel, white pixel, white pixel, ... <br/>
+						row 2: dark grey pixel, black pixel, black pixel, ... <br/>
+						... <br/>
+					</p>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/compression1.png"
+						 alt="Bitmap Image" width="800"/>
+					<small style="font-size: 0.5em">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/compression1.png</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Windows Bitmap (.BMP) format</h4>
+					<strong>simply record the color of each pixel <br/>
+						with no compression! </strong><br/>
+					the BMP format is not used on the web because it produces very large (uncompressed) files
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Portable Network Graphics (.PNG) format</h4>
+					<strong>same idea as windows bitmap <br/>but with image compression!</strong><br/><br/>
+					produces smaller files with no loss in quality <br/> therefore is common on the web <br/>
+					<small style="padding-top: 10px">
+						the image taking 526KBs using .BMP can take <br/>around 36KBs using .PNG (24-bit palette) without loss of information
+					</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Bitmap Image Format <br/>Different Palettes (Color Depths)</h4>
+					we can use different palettes for storing the color of each square in a bitmap image;
+					the palette is stored along with the pixel data in the file itself
+					<br/><br/>
+					<ul style="font-size: 0.9em">
+						<li>24-bit color (true colour) palette: 16,777,216 different colors</li>
+						<li>8-bit color palette: 256 different colors</li>
+						<li>generally, <em>n-bit</em> color palette: 2<sup>n</sup> different colors</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Color Depth Choice Example [8-bit vs. 3-bit]</h4>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/depth.png"
+						 alt="Color Depth Example" width="800px"/>
+					<small style="font-size: 0.5em">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/depth.png</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Color Depth Choice Example [8-bit vs. 3-bit]</h4>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/phone-pic-8.png"
+						 alt="Color Depth Example" width="400px"/>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/phone-pic-3.png"
+						 alt="Color Depth Example" width="400px"/>
+					<small style="font-size: 0.5em">* image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/phone-pic-[8/3].png</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">Image Compression Types</h4>
+					<ul>
+						<li>lossless compression: e.g. PNG format</li>
+						<li>lossy compression: e.g. JPEG format</li>
+					</ul>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">JPEG Image Format</h4>
+					<ul>
+						<li>designed specifically for photographs, so excellent for storing photographs, but not good at other types of images</li>
+						<li>has a <em>quality</em> parameter (1–100) which can be used to trade off file size and image quality</li>
+					</ul>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/vancouver-docks.jpg"
+						 alt="Vancouver Docks">
+					<small style="font-size: 0.5em">
+						* image from <a
+							href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/vancouver-docks.jpg">http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/vancouver-docks.jpg
+						<br/> (equal PNG file size 670KB)</a>
+					</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">JPEG Image Format <br/>different quality parameter values</h4>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/jpeg.svg"
+						 alt="Vancouver Docks - Parts">
+					<small style="font-size: 0.5em">
+						* image from <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/jpeg.svg">http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/jpeg.svg</a>
+					</small>
+				</section>
+				<section>
+					<h4 style="border-bottom: 1px solid gray">JPEG Image Format - Text Example</h4>
+					<img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/compression4.png"
+						 alt="Text Example" width="800px">
+					<small style="font-size: 0.5em">
+						* image from <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/compression4.png">http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/compression4.png</a>
+					</small>
+				</section>
+				<!--<section>
+					<h4 style="border-bottom: 1px solid gray">Image Formats</h4>
+				</section>
+
+				<section>
+					<h4 style="border-bottom: 1px solid gray"></h4>
+					<img src="" alt="" width="700">
+					<small style="font-size:0.4em;word-wrap: break-word;width: 100%;">* image from </small>
+				</section>
+				<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
