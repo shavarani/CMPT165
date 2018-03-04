@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 6-1</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+        <link rel="stylesheet" href="css/presentation.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit6: JavaScript and Graphics</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+						<li class="non-transparent">More jQuery Methods</li>
+                        <li class="non-transparent">JavaScript + SVG: Raphaël</li>
+                        <li class="non-transparent">About SVG</li>
+                        <li class="semi-transparent">Working with SVG</li>
+                        <li class="semi-transparent">Animating SVG</li>
+					</ol>
+				</section>
+                <section>
+                    <h4><code>$</code> / <code>jQuery</code></h4>
+                    <p>the jQuery library uses <code>$</code> <br/>to mean <em>exactly</em> the same thing as <code>jQuery</code></p>
+                    <div class="code-block block-9">
+                        <code>
+                            jQuery('p').click(say_hello) <br/>
+                            $('p').click(say_hello)<br/><br/>
+
+                            jQuery('#changeme').html('Somebody clicked me.')<br/>
+                            $('#changeme').html('Somebody clicked me.')
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Different Ways to Modify the Page</h4>
+                    <div class="code-block block-10">
+                        <code>
+                            $('#changeme').html('Somebody &lt;em&gt;clicked&lt;/em&gt; me.') <br/>
+                            $('#changeme').attr('class', 'active') <br/>
+                            $('img#changeme').attr('src', 'other_img.png') <br/>
+                            $('section#expanding').append('&lt;p&gt;new paragraph.&lt;/p&gt;') <br/>
+                            newstyle = { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'font-size': '1.5em', <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'margin-left': '2em' <br/>
+                            } <br/>
+                            $('#styling').css(newstyle) <br/>
+                            $('#styling').animate(newstyle, 2000)
+                        </code>
+                    </div>
+                    <br/>
+                    <small>
+                        * the <code>.animate()</code> function can only animate CSS properties that are <em>numeric</em><br/>
+                        e.g. it <strong>cannot</strong> animate <strong>font-weight</strong> from normal to bold, or colour values
+                    </small>
+                </section>
+                <section>
+                    <h4>JavaScript + SVG: <code>Raphaël</code></h4>
+                    <p>the library used to create and manipulate <br/> SVG graphics on the page</p>
+                    <p>the images are made up of <br/>shapes (vector graphics format) not pixels</p>
+                </section>
+                <section>
+                    <h4>JavaScript + SVG: <code>Raphaël</code></h4>
+                    <p>in <code><a href="http://dmitrybaranovskiy.github.io/raphael/">Raphaël</a></code>, we will use JavaScript code <br/> to create of manipulate those shapes</p>
+                    <p>working with bitmapped images, <br/>there are libraries to help with that</p>
+                    <p>vector images are just easier to work with to start with!</p>
+                </section>
+                <section>
+                    <p>let's try <code>Raphaël</code> for the first time in <a
+                            href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/raph1.html">here</a>!</p>
+                    <p>and <a href="examples/raph2.html">Here</a> is a more complicated example</p>
+                </section>
+                <section>
+                    you can find out more about the <code>Rapha&euml;l</code> library <br/> in <a
+                        href="http://dmitrybaranovskiy.github.io/raphael/reference.html">this reference</a>
+                </section>
+                <section>
+                    <h4>SVG Images</h4>
+                </section>
+                <section>
+                    <p>the SVG image format is strange in some ways</p>
+                    <p>you use it like other image formats (PNG, JPEG, etc.)</p>
+                    <p>but it technically has more in common with HTML</p>
+                </section>
+                <section>
+                    <h4>The SVG Format</h4>
+                    <p>SVG images are stored as text files, and contain tags and attributes, much like HTML</p>
+                </section>
+                <section>
+                    <h4>The SVG example</h4>
+                    <img src="img/raph.svg" alt="Rapha&euml;l Example"/>
+                </section>
+                <section>
+                    <h4>The SVG example - source code</h4>
+                    <div class="code-block" style="font-size: 0.5em !important;">
+                        <code>
+                            &lt;svg height=&quot;300&quot; width=&quot;600&quot; xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;<br/>
+                            <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;ellipse cx=&quot;150&quot; cy=&quot;60&quot; rx=&quot;120&quot; ry=&quot;30&quot;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fill=&quot;#00ff00&quot; stroke=&quot;#999999&quot; stroke-width=&quot;12&quot;&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/ellipse&gt;<br/>
+                            <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;text x=&quot;300&quot; y=&quot;150&quot; text-anchor=&quot;middle&quot; font-size=&quot;42px&quot;&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;tspan dy=&quot;15&quot;&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;I think this is going well.<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/tspan&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/text&gt;<br/>
+                            <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;rect x=&quot;450&quot; y=&quot;150&quot; rx=&quot;0&quot; ry=&quot;0&quot; fill=&quot;none&quot;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;width=&quot;120&quot; height=&quot;90&quot; stroke=&quot;#007700&quot; stroke-width=&quot;3&quot;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;transform=&quot;matrix(0.8,0.5,-0.5,0.8,165,-230)&quot;&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;/rect&gt;<br/>
+                            <br/>
+                            &lt;/svg&gt;
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <p>for editing a SVG file you can use <a href="https://inkscape.org/">Inkscape</a>; <br/>a free, open-source, vector graphics editor</p>
+                    <p>it is designed as an SVG editor <br/>the format that it works with by default and best is SVG</p>
+                </section>
+
+                <!--<section>
+                    <h4>Another Example</h4>
+                    <div class="code-block block-6" style="font-size: 0.5em !important;">
+                        <code>
+                            setup = function() { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;paper = Raphael('container', 200, 100)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;elli = paper.ellipse(50, 20, 40, 10)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;elli.attr({<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'fill': '#0f0',<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'stroke': '#999',<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'stroke-width': '4'<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;})<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;caption = paper.text(100, 50, <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'I think this is going well.')<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;caption.attr({<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'font-size': '14',<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'font-family': 'serif'<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;})<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;rect = paper.rect(150, 50, 40, 30)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;rect.attr({<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'transform': 'r30',<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'stroke': '#070'<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;})<br/>
+                            }<br/>
+                            jQuery(document).ready(setup)
+                        </code>
+                    </div>
+                </section>
+
+				<section>
+					<h4></h4>
+					<img src="" alt="" width="700">
+					<small>* image from </small>
+				</section>
+				<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
