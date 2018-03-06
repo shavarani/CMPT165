@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>CMPT 165 | Unit 6-1</title>
+		<title>CMPT 165 | Unit 6</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/sky.css">
@@ -39,8 +39,8 @@
 						<li class="non-transparent">More jQuery Methods</li>
                         <li class="non-transparent">JavaScript + SVG: Raphaël</li>
                         <li class="non-transparent">About SVG</li>
-                        <li class="semi-transparent">Working with SVG</li>
-                        <li class="semi-transparent">Animating SVG</li>
+                        <li class="non-transparent">Working with SVG</li>
+                        <li class="non-transparent">Animating SVG</li>
 					</ol>
 				</section>
                 <section>
@@ -143,7 +143,99 @@
                     <p>for editing a SVG file you can use <a href="https://inkscape.org/">Inkscape</a>; <br/>a free, open-source, vector graphics editor</p>
                     <p>it is designed as an SVG editor <br/>the format that it works with by default and best is SVG</p>
                 </section>
-
+                <section>
+                    <h4>Dynamically Modifying SVG</h4>
+                    <p>Since we can use JavaScript code to modify SVG images<br/>we can do that work anywhere we want in our code</p>
+                    <p>Lets try it <a
+                            href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/dynamic-page.html">here</a>!</p>
+                </section>
+                <section>
+                    <h4><code>paper.path()</code> - Drawing Lines and Curves</h4>
+                    <p>we can use the <code>paper.path()</code> function <br/>to draw lines and curves on the canvas!</p>
+                    <p>we need to pass it a <em>path string</em> upon calling it</p>
+                </section>
+                <section>
+                    <h4><code>paper.path()</code> - Drawing Lines and Curves</h4>
+                    <p>before delving into the details, <br/>let's try an example first, <a
+                            href="examples/raph3.html">here</a>!</p>
+                </section>
+                <section>
+                    <h4><code>paper.path()</code> - Drawing Lines and Curves</h4>
+                    <p>the <em>path string</em> is a series of these commands<br/>that will be used to draw the path</p>
+                    <p>the path will contain the following commands [remember that (0,0) is in the upper-left]</p>
+                    <ul style="font-size: 0.85em">
+                        <li><strong>M</strong>: move to the point (x, y), e.g. <strong>'M50,20'</strong></li>
+                        <li><strong>L</strong>: draw a straight line from current position to (x,y), e.g. <strong>'L390,30'</strong></li>
+                        <li><strong>Z</strong>: close the path (draw a straight line back to the starting point)</li>
+                        <li><strong>T</strong>: curve through br(draws a curve ending to the selected point), e.g. <strong>'T150,80'</strong></li>
+                        <li><strong>Q</strong>: control point (chooses a point that &quot;pulls&quot; the curve toward it), e.g. <strong>'Q150,180 150,120'</strong></li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Animating SVG</h4>
+                </section>
+                <section>
+                    <h4><code>.animate()</code> function</h4>
+                    <p>all the Rapha&euml;l shape objects have a <code>.animate()</code> function (as the exact function jQuery objects do)</p>
+                    <p>when using <code>.animate()</code>, the <em>shapes' attributes</em> would change in an animated manner</p>
+                </section>
+                <section>
+                    <h4><code>.animate()</code> function - Example</h4>
+                    <div class="code-block block-6">
+                        <code>
+                            initial_attr = { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'fill': '#fff', <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'stroke-width': '1' <br/>
+                            } <br/>
+                            final_attr = { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'fill': '#f00', <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'stroke-width': '5'<br/>
+                            }<br/>
+                            rect = paper.rect(10, 10, 20, 20)<br/>
+                            rect.attr(initial_attr)<br/>
+                            rect.animate(final_attr, 2000)
+                        </code>
+                    </div>
+                    <br/>
+                    <small>
+                        if we have a variable referring to the shape (<strong>rect</strong> in that example), <br/>
+                        we can perform the animation any time, such as later when the user clicks something
+                    </small>
+                </section>
+                <section>
+                    <h4><em>transform string</em> attribute</h4>
+                    <p>one of the most useful attributes to animate with Rapha&euml;l is the element's transformation</p>
+                    <p><em>transform string</em> is used to specify the transformation and it can be done using following commands</p>
+                    <ul>
+                        <li><strong>t</strong> for translation (moving)</li>
+                        <li><strong>r</strong> for rotation</li>
+                        <li><strong>s</strong> for scaling</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4><em>transform string</em> attribute example</h4>
+                   <div class="code-block block-6">
+                       <code>
+                           rotated = { <br/>
+                           &nbsp;&nbsp;&nbsp;&nbsp;'transform': 'r180'<br/>
+                           }<br/>
+                           shape.animate(rotated, 5000)<br/>
+                           <br/>
+                           slide_grow = {<br/>
+                           &nbsp;&nbsp;&nbsp;&nbsp;'transform': 't100,200s3'<br/>
+                           }<br/>
+                           shape.animate(slide_grow, 1000)
+                       </code>
+                   </div>
+                </section>
+                <section>
+                    <h4>Animating SVG - Examples</h4>
+                    let's study these two examples carefully
+                    <ul>
+                        <li><a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/animate1.html">Example 1: User-Initiated Animation</a></li>
+                        <li><a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/animate2.html">Example 2: Repeating Animation</a></li>
+                    </ul>
+                </section>
                 <!--<section>
                     <h4>Another Example</h4>
                     <div class="code-block block-6" style="font-size: 0.5em !important;">
