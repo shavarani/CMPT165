@@ -173,22 +173,17 @@
                     </ul>
                 </section>
                 <section>
-                    <h4><code>paper.print()</code> and <code>paper.text()</code></h4>
-                    <dl>
-                        <dt><code>text()</code></dt>
-                        <dd>draws a text string</dd>
-                        <dt><code>print()</code></dt>
-                        <dd>creates set of shapes to represent given font at given position with given size <br/>
-                            result of the method is set object which contains each letter as separate path object</dd>
-                    </dl>
+                    <h4><code>paper.text()</code></h4>
+                    <p>draws a text string as a part of the SVG Image</p>
+
                     <br/><br/>
                     <div class="code-block">
                         <code>
                             var t = paper.text(50, 50, &quot;Rapha&euml;l\nis\ncool!&quot;); <br/>
-                            var txt = r.print(10, 50, &quot;print&quot;, <br/>
+                            <!--var txt = r.print(10, 50, &quot;print&quot;, <br/>
                             &nbsp;&nbsp;&nbsp;&nbsp;r.getFont(&quot;Museo&quot;), 30).attr({fill: &quot;#fff&quot;});
                             <br/>
-                            txt[0].attr({fill: &quot;#f00&quot;});
+                            txt[0].attr({fill: &quot;#f00&quot;});-->
                         </code>
                     </div>
                 </section>
