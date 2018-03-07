@@ -109,6 +109,7 @@
                 <section>
                     <h4>The SVG Format</h4>
                     <p>SVG images are stored as text files, and contain tags and attributes, much like HTML</p>
+                    <p><a href="https://www.w3.org/TR/SVG11/">here</a> you can find more about the rules on svg standard</p>
                 </section>
                 <section>
                     <h4>The SVG example</h4>
@@ -170,6 +171,26 @@
                         <li><strong>T</strong>: curve through br(draws a curve ending to the selected point), e.g. <strong>'T150,80'</strong></li>
                         <li><strong>Q</strong>: control point (chooses a point that &quot;pulls&quot; the curve toward it), e.g. <strong>'Q150,180 150,120'</strong></li>
                     </ul>
+                </section>
+                <section>
+                    <h4><code>paper.print()</code> and <code>paper.text()</code></h4>
+                    <dl>
+                        <dt><code>text()</code></dt>
+                        <dd>draws a text string</dd>
+                        <dt><code>print()</code></dt>
+                        <dd>creates set of shapes to represent given font at given position with given size <br/>
+                            result of the method is set object which contains each letter as separate path object</dd>
+                    </dl>
+                    <br/><br/>
+                    <div class="code-block">
+                        <code>
+                            var t = paper.text(50, 50, &quot;Rapha&euml;l\nis\ncool!&quot;); <br/>
+                            var txt = r.print(10, 50, &quot;print&quot;, <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r.getFont(&quot;Museo&quot;), 30).attr({fill: &quot;#fff&quot;});
+                            <br/>
+                            txt[0].attr({fill: &quot;#f00&quot;});
+                        </code>
+                    </div>
                 </section>
                 <section>
                     <h4>Animating SVG</h4>
@@ -235,6 +256,60 @@
                         <li><a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/animate1.html">Example 1: User-Initiated Animation</a></li>
                         <li><a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/animate2.html">Example 2: Repeating Animation</a></li>
                     </ul>
+                </section>
+                <section>
+                    <h4>Rapha&euml;l Questions</h4>
+                </section>
+                <section>
+                    <h4>Question 1</h4>
+                    <p>How can I change the background color of the Rapha&euml;l canvas itself?</p>
+                    <div class="code-block block-8"><code>p2.canvas.style.backgroundColor = '#F00';</code></div>
+                </section>
+                <section>
+                    <h4>Question 2</h4>
+                    <p>How can I define a function for a Rapha&euml;l shape ?</p>
+                    <div class="code-block block-8">
+                        <code>
+                            Raphael.el.red = function () { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;this.attr({fill: "#f00"}); <br/>
+                            }; <br/>
+                            paper.circle(100, 100, 20).red();
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Question 4</h4>
+                    <p>How can I access the equivalent DOM Element of a Rapha&euml;l shape?</p>
+                    <div class="code-block block-8">
+                        <code>
+                            var c = paper.circle(10, 10, 10); <br/>
+                            c.node.onclick = function () { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;c.attr("fill", "red"); <br/>
+                            };
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Question 5</h4>
+                    <p>How can I define a bunch of functions that I can use later for Rapha&euml;l shapes?</p>
+                    <div class="code-block block-10" style="font-size: 0.5em !important;">
+                        <code>
+                            Raphael.fn.arrow = function (x1, y1, x2, y2, size) { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;return this.path( ... ); <br/>
+                            }; <br/>
+                            // or create namespace <br/>
+                            Raphael.fn.mystuff = { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;arrow: function () {...}, <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;star: function () {...}, <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;// etc ... <br/>
+                            }; <br/>
+                            var paper = Raphael(10, 10, 630, 480); <br/>
+                            // then use it <br/>
+                            paper.arrow(10, 10, 30, 30, 5).attr({fill: "#f00"}); <br/>
+                            paper.mystuff.arrow(); <br/>
+                            paper.mystuff.star();
+                        </code>
+                    </div>
                 </section>
                 <!--<section>
                     <h4>Another Example</h4>
