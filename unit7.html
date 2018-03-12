@@ -1,0 +1,586 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 6</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+        <link rel="stylesheet" href="css/presentation.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit7: Working with JavaScript</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+                        <li class="non-transparent">Variables, Again</li>
+                        <li class="non-transparent">JavaScript Operators Types</li>
+                        <li class="semi-transparent">Iteration: the for-loop</li>
+                        <li class="semi-transparent">Working with Strings</li>
+                        <li class="semi-transparent">HTML Forms</li>
+                        <li class="semi-transparent">Making Decisions</li>
+					</ol>
+				</section>
+                <section><h4>Variables, Again</h4></section>
+                <section>
+                    <h4>What Variables Are For</h4>
+                    <p>to store some value so we can use it later!</p>
+                    <p>if you don't need it later, <br/>just the function call will be enough!</p>
+                </section>
+                <section>
+                    <h4>Variable Values</h4>
+                    <p style="text-align: left">There are two things you can do with variables:</p>
+                    <ul style="font-size: 0.9em">
+                        <li>store values in them with a variable assignment statement</li>
+                        <li>retrieve the stored value by referring to the variable by name</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Variables</h4>
+                    <ul>
+                        <li>help the code be more readable</li>
+                        <li>aid modification of their values</li>
+                        <li>just sometimes make the code more wordy!</li>
+                    </ul>
+                    <br/><br/>
+                    <div class="code-block block-6">
+                        <code>
+                            setup = function() { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;$('button').click(do_things)<br/>
+                            }<br/>
+                            $(document).ready(setup)<br/>
+                            /////////Equal to//////////
+                            $(document).ready(function() {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;$('button').click(do_things)<br/>
+                            })
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>JavaScript Operators Types</h4>
+                </section>
+                <section>
+                    <h4>JavaScript Arithmetic Operators</h4>
+                    <table style="font-size: 0.8em">
+                        <tbody><tr>
+                            <th style="width:25%">Operator</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>+</td>
+                            <td>Addition</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Subtraction</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>Multiplication</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>Division</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Modulus (Remainder)</td>
+                        </tr>
+                        <tr>
+                            <td>++</td>
+                            <td>Increment</td>
+                        </tr>
+                        <tr>
+                            <td>--</td>
+                            <td>Decrement</td>
+                        </tr>
+                        </tbody></table>
+                    <hr/>
+
+                    <small>
+                        content from <a href="https://www.w3schools.com/js/js_operators.asp">https://www.w3schools.com/js/js_operators.asp</a>
+                    </small>
+                </section>
+                <section>
+                    <h4>JavaScript Assignment Operators</h4>
+                    <table style="font-size: 0.8em">
+                        <tbody>
+                        <tr>
+                            <th>Operator</th>
+                            <th>Example</th>
+                            <th>Same As</th>
+                        </tr>
+                        <tr>
+                            <td>=</td>
+                            <td>x = y</td>
+                            <td>x = y</td>
+                        </tr>
+                        <tr>
+                            <td>+=</td>
+                            <td>x += y</td>
+                            <td>x = x + y</td>
+                        </tr>
+                        <tr>
+                            <td>-=</td>
+                            <td>x -= y</td>
+                            <td>x = x - y</td>
+                        </tr>
+                        <tr>
+                            <td>*=</td>
+                            <td>x *= y</td>
+                            <td>x = x * y</td>
+                        </tr>
+                        <tr>
+                            <td>/=</td>
+                            <td>x /= y</td>
+                            <td>x = x / y</td>
+                        </tr>
+                        <tr>
+                            <td>%=</td>
+                            <td>x %= y</td>
+                            <td>x = x % y</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <hr/>
+                    <small>
+                        content from <a href="https://www.w3schools.com/js/js_operators.asp">https://www.w3schools.com/js/js_operators.asp</a>
+                    </small>
+                </section>
+                <section>
+                    <h4>JavaScript Comparison Operators</h4>
+                    <table style="font-size: 0.8em">
+                        <tbody><tr>
+                            <th>Operator</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>==</td>
+                            <td>equal to</td>
+                        </tr>
+                        <tr>
+                            <td>===</td>
+                            <td>equal value and equal type</td>
+                        </tr>
+                        <tr>
+                            <td>!=</td>
+                            <td>not equal</td>
+                        </tr>
+                        <tr>
+                            <td>!==</td>
+                            <td>not equal value or not equal type</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;</td>
+                            <td>greater than</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;</td>
+                            <td>less than</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;=</td>
+                            <td>greater than or equal to</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;=</td>
+                            <td>less than or equal to</td>
+                        </tr>
+                        <tr>
+                            <td>?</td>
+                            <td>ternary operator</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <hr/>
+                    <small>
+                        content from <a href="https://www.w3schools.com/js/js_operators.asp">https://www.w3schools.com/js/js_operators.asp</a>
+                    </small>
+                </section>
+
+                <section>
+                    <h4>JavaScript Operators Precedence</h4>
+                    <div style="height: 550px; overflow-y: scroll">
+                        <table style="font-size: 0.8em">
+                            <tbody><tr>
+                                <th style="width:10%">Value</th>
+                                <th style="width:15%">Operator</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>( )</td>
+                                <td>Expression grouping</td>
+                                <td>(3 + 4)</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>.</td>
+                                <td>Member</td>
+                                <td>person.name</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>[]</td>
+                                <td>Member</td>
+                                <td>person["name"]</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>()</td>
+                                <td>Function call</td>
+                                <td>myFunction()</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>new</td>
+                                <td>Create</td>
+                                <td>new Date()</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>++</td>
+                                <td>Postfix Increment</td>
+                                <td>i++</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>--</td>
+                                <td>Postfix Decrement</td>
+                                <td>i--</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>++</td>
+                                <td>Prefix Increment</td>
+                                <td>++i</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>--</td>
+                                <td>Prefix Decrement</td>
+                                <td>--i</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>!</td>
+                                <td>Logical not</td>
+                                <td>!(x==y)</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>typeof</td>
+                                <td>Type</td>
+                                <td>typeof x</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>*</td>
+                                <td>Multiplication</td>
+                                <td>10 * 5</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>/</td>
+                                <td>Division</td>
+                                <td>10 / 5</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>%</td>
+                                <td>Modulo division</td>
+                                <td>10 % 5</td>
+                            </tr>
+                            <tr class="w3-pale-red">
+                                <td>14</td>
+                                <td>**</td>
+                                <td>Exponentiation</td>
+                                <td>10 ** 2</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>+</td>
+                                <td>Addition</td>
+                                <td>10 + 5</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>-</td>
+                                <td>Subtraction</td>
+                                <td>10 - 5</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>&lt;&lt;</td>
+                                <td>Shift left</td>
+                                <td>x &lt;&lt; 2</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>&gt;&gt;</td>
+                                <td>Shift right</td>
+                                <td>x &gt;&gt; 2</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>&gt;&gt;&gt;</td>
+                                <td>Shift right (unsigned)</td>
+                                <td>x &gt;&gt;&gt; 2</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>&lt;</td>
+                                <td>Less than</td>
+                                <td>x &lt; y&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>&lt;=</td>
+                                <td>Less than or equal</td>
+                                <td>x &lt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>&gt;</td>
+                                <td>Greater than</td>
+                                <td>x &gt; y</td>
+                            </tr>
+                            <tr>
+                                <td>11</td>
+                                <td>&gt;=</td>
+                                <td>Greater than or equal</td>
+                                <td>x &gt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>==</td>
+                                <td>Equal</td>
+                                <td>x == y</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>===</td>
+                                <td>Strict equal</td>
+                                <td>x === y</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>!=</td>
+                                <td>Unequal</td>
+                                <td>x != y</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>!==</td>
+                                <td>Strict unequal</td>
+                                <td>x !== y</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>&amp;&amp;</td>
+                                <td>Logical and</td>
+                                <td>x &amp;&amp; y</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>||</td>
+                                <td>Logical or</td>
+                                <td>x || y</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>=</td>
+                                <td>Assignment</td>
+                                <td>x = y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>+=</td>
+                                <td>Assignment</td>
+                                <td>x += y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>-=</td>
+                                <td>Assignment</td>
+                                <td>x -= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>*=</td>
+                                <td>Assignment</td>
+                                <td>x *= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>%=</td>
+                                <td>Assignment</td>
+                                <td>x %= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>&lt;&lt;=</td>
+                                <td>Assignment</td>
+                                <td>x &lt;&lt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>&gt;&gt;=</td>
+                                <td>Assignment</td>
+                                <td>x &gt;&gt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>&gt;&gt;&gt;=</td>
+                                <td>Assignment</td>
+                                <td>x &gt;&gt;&gt;= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>&amp;=</td>
+                                <td>Assignment</td>
+                                <td>x &amp;= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>^=</td>
+                                <td>Assignment</td>
+                                <td>x ^= y</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>|=</td>
+                                <td>Assignment</td>
+                                <td>x |= y</td>
+                            </tr>
+                            </tbody></table>
+                    </div>
+                    <hr/>
+                    <small>
+                        content from <a href="https://www.w3schools.com/js/js_arithmetic.asp">https://www.w3schools.com/js/js_arithmetic.asp</a>
+                    </small>
+                </section>
+                <!--<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
