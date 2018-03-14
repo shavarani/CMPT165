@@ -38,11 +38,11 @@
 					<ol>
                         <li class="non-transparent">Variables, Again</li>
                         <li class="non-transparent">JavaScript Operators Types</li>
-                        <li class="semi-transparent">Iteration: the for-loop</li>
-                        <li class="semi-transparent">Working with Strings</li>
+                        <li class="non-transparent">Iteration: the for-loop</li>
+                        <li class="non-transparent">Working with Strings</li>
+                        <li class="non-transparent">Making Decisions</li>
                         <li class="semi-transparent">HTML Forms</li>
-                        <li class="semi-transparent">Making Decisions</li>
-					</ol>
+                    </ol>
 				</section>
                 <section><h4>Variables, Again</h4></section>
                 <section>
@@ -550,6 +550,257 @@
                         content from <a href="https://www.w3schools.com/js/js_arithmetic.asp">https://www.w3schools.com/js/js_arithmetic.asp</a>
                     </small>
                 </section>
+
+                <section>
+                    <h4>Iteration: The <code>for</code> Loop</h4>
+                    <p>
+                        in most programming languages (including JavaScript) <br/>
+                        <code>for</code> loop is used when you have <br/> a &quot;definite&quot; number of times to iterate
+                    </p>
+                    <br/>
+                    <div class="code-block">
+                        <code>
+                            for (step = 1; step <= 10; step += 1) { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;$('#example1').append('&lt;p&gt;One more paragraph.&lt;/p&gt;') <br/>
+                            } <br/>
+                            <hr/>
+                            for (n = 1; n <= 6; n += 1) { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;$('#example2').append('&lt;p&gt;Paragraph #' + n + '&lt;/p&gt;') <br/>
+                            }
+
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Iteration: Rapha&euml;l Example</h4>
+                    <div class="code-block block-8" style="font-size: 0.6em !important;">
+                        <code>
+                            paper = Raphael('container', 400, 200)<br/>
+                            circle_attrs = {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'stroke': '#c50',<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'stroke-width': '2'<br/>
+                            }<br/>
+                            rect_attrs = {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'fill': '#292',<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'stroke-width': '1.5'<br/>
+                            }<br/>
+                            for (count = 0; count <= 11; count += 1) {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;c = paper.circle(10 + count*14, 20 + count*12, 6)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;c.attr(circle_attrs)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r = paper.rect(250, 100, 40, 40)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r.attr(rect_attrs)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r.rotate(count*3)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r.scale(3 - count*0.25)<br/>
+                            }
+                        </code>
+                    </div>
+                    <small>
+                        You can find the implementation of this example <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/for-loop.html">here</a> !
+                    </small>
+                </section>
+                <section>
+                    <h4>Building Strings</h4>
+                    <p>when the <code>+</code> operator is applied to strings, <br/>it joins them together or <strong>concatenates</strong> them</p>
+                    <div class="code-block block-5">
+                        <code>
+                            r = 'f' <br/>
+                            g = '5'<br/>
+                            b = '0'<br/>
+                            newstyle = {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'color': '#' + r + g + b<br/>
+                            }
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Building Strings</h4>
+                    <p>when you try to add <br/>a string and a number together in JavaScript</p>
+                    <P>the number is automatically converted to a string, <br/>and the strings are joined</p>
+                    <div class="code-block block-5">
+                        <code>
+                            a1 = 'abc' + 123 <br/>
+                            a2 = 'abc' + '123' <br/>
+                            a3 = 'abc123' <br/>
+                            <hr/>
+                            a1 === a2 === a3
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Building Strings: Rapha&euml;l Use Case Examples</h4>
+                    <p>
+                        <code>.scale()</code> and <code>.rotate()</code> functions are convenient,
+                        <br/>
+                        but they won't let us animate either scaling or rotation <br/>
+                        to do that, we need <code>.animate()</code> and the <code>'transform'</code> attribute
+                    </p>
+                </section>
+                <section>
+                    <h4>Building Strings: Rapha&euml;l Use Case Example 1</h4>
+                    <div class="code-block block-8">
+                        <code>
+                            for (count = 1; count <= 6; count += 1) { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r = paper.rect(30, 30, 90, 90) <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;animation_attrs = { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'transform': 'r' + (count*15) <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r.attr(animation_attrs) <br/>
+                            }
+                        </code>
+                    </div>
+                    <img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/for-build-result.svg"
+                         alt="For Build Result"/>
+                    <small>* Image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/for-build-result.svg</small>
+                </section>
+                <section>
+                    <h4>Building Strings: Rapha&euml;l Use Case Example 2</h4>
+                    <div class="code-block block-7" style="font-size: 0.6em !important;">
+                        <code>
+                            paper = Raphael('container2', 140, 140) <br/>
+                            rect_attrs = {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'fill': '#292',<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;'stroke-width': '1.5'<br/>
+                            }<br/>
+                            for (count = 0; count <= 11; count += 1) {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r = paper.rect(50, 50, 40, 40)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r.attr(rect_attrs)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;angle = count*3<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;scale = 3 - count*0.25<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;anim_attrs = {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'transform': 'r' + angle + 's' + scale<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r.animate(anim_attrs, 2000)<br/>
+                            }
+                        </code>
+                    </div>
+                    <br/>
+                    <small>
+                        let's try the result of this code <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/for-build.html">here</a>
+                    </small>
+                </section>
+                <section>
+                    <h4>Strings as Objects</h4>
+                    <p>
+                        Strings we have been using in JavaScript have the fundamental job of holding characters
+                    </p>
+                    <p>
+                        they also behave as objects: <br/>
+                         they hold variables (including functions) that do useful things with the contents of the string
+                    </p>
+                </section>
+                <section>
+                    <h4>Strings as Objects: <code>.toLowerCase()</code></h4>
+                    <p>gives back a <strong>copy</strong> of itself <br/>converted to entirely lowercase</p>
+                    <div class="code-block block-7">
+                        <code>
+                            greeting = 'Hello World!' <br/>
+                            lower_greeting = greeting.toLowerCase() <br/>
+                            <hr/>
+                            lower_greeting === 'hello world!'
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Strings as Objects: <code>.charAt()</code></h4>
+
+                    <p>extracts individual characters from a string <br/> (counting from zero)</p>
+                    <div class="code-block block-5">
+                        <code>
+                            letters = 'abcdefg' <br/>
+                            third = letters.charAt(2) <br/>
+                            <hr/>
+                            third === 'c'
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Strings as Objects: Rapha&euml;l Use Case Example</h4>
+                    <div class="code-block ">
+                        <code>
+                            color_values = '0123456789abcdef' <br/>
+                            paper = Raphael('container', 350, 120)<br/>
+                            for (red = 0; red <= 15; red += 1) {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r = paper.rect(red*20, red*5, 30, 30)<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;rect_attrs = {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'fill': '#' + color_values.charAt(red) + '00'<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;}<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;r.attr(rect_attrs)<br/>
+                            }
+                        </code>
+                    </div>
+                    <img src="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/for-build-2-result.svg"
+                         alt="For Build Result 2"/>
+                    <small>
+                        * you can try this example <a
+                                href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/for-build-2.html">here</a><br/>
+                        * Image from http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/figures/for-build-2-result.svg
+
+                    </small>
+                </section>
+                <section>
+                    <h4>Making Decisions</h4>
+                    <p>sometimes we need to be able to make decisions <br/>
+                        based on something the user enters <br/>
+                        or some value we calculate, or the time of day, or …</p>
+
+                    <!--<small>for example, let's imagine we want to present the user with <br/>a choice of which direction to move a shape in a SVG image</small>-->
+                </section>
+                <section>
+                    <h4><code>if</code> Statement</h4>
+                    <p>we use the <code>if</code> statement in JavaScript to make decisions about what code to run</p>
+                    <p>the <code>if</code> statement means <br/> <em>&quot;should this block of code run or not?&quot;</em></p>
+                    <div class="code-block block-8">
+                        <code>
+                            if (count > 100) { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;$('#error').html('That is too many.') <br/>
+                            }
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Review over JavaScript comparison operators</h4>
+                    <p>the <code>if</code> statement condition can be any expression that results in a true or false result</p>
+                    <table style="font-size: 0.6em">
+                        <thead><tr><th scope="col">Comparison</th><th scope="col">Meaning</th><th scope="col">Example is…</th></tr></thead>
+                        <tbody>
+                        <tr><td><code class="js">23 == 3</code></td><td>is equal to</td><td>false</td></tr>
+                        <tr><td><code class="js">23 != 3</code></td><td>is not equal to</td><td>true</td></tr>
+                        <tr><td><code class="js">4 &lt; 9</code></td><td>less than</td><td>true</td></tr>
+                        <tr><td><code class="js">4 &gt; 9</code></td><td>greater than</td><td>false</td></tr>
+                        <tr><td><code class="js">8 &lt;= 6</code></td><td>less than or equal</td><td>false</td></tr>
+                        <tr><td><code class="js">8 &gt;= 6</code></td><td>greater than or equal</td><td>true</td></tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section>
+                    <h4><code>if-else</code> Statement</h4>
+                    <p>
+                        <em>&quot;do this if the condition is true, but that if it isn't&quot;</em><br/>
+                        the <code>else</code> which can be added to an <code>if</code><br/>
+                        lets us do exactly <em>that</em>:<br/>
+                        code that will run if the condition is false!
+                    </p>
+                    <div class="code-block block-8">
+                        <code>
+                            if (count > 100) { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;$('#error').html('That is too many.') <br/>
+                            } else { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;$('#sucess').html('Count is reasonable') <br/>
+                            }
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Making Decision Example</h4>
+                    Let's look at <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/toggle-if.html">Hiding Optional Content Example</a>
+                </section>
+                <!--<section>
+                    <h4>HTML Forms</h4>
+                </section>
+                <section>
+                    <h4>dropdown</h4>
+                    <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/select-if2.html">here</a>
+                </section>-->
                 <!--<section><aside class="notes"></aside></section>-->
 				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
 			</div>
