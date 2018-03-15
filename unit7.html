@@ -41,7 +41,7 @@
                         <li class="non-transparent">Iteration: the for-loop</li>
                         <li class="non-transparent">Working with Strings</li>
                         <li class="non-transparent">Making Decisions</li>
-                        <li class="semi-transparent">HTML Forms</li>
+                        <li class="non-transparent">HTML Forms</li>
                     </ol>
 				</section>
                 <section><h4>Variables, Again</h4></section>
@@ -794,13 +794,122 @@
                     <h4>Making Decision Example</h4>
                     Let's look at <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/toggle-if.html">Hiding Optional Content Example</a>
                 </section>
-                <!--<section>
+                <section>
                     <h4>HTML Forms</h4>
+                    <p>In previous versions of HTML, <br/>all inputs had to be inside a <code>&lt;form&gt;</code> element
+                    <br/>
+                    that is not a must anymore in HTML5
+                    </p>
+                    <p><a href="https://www.w3schools.com/html/tryit.asp?filename=tryhtml_form_legend">here</a> you can see an example use case of what the <code>&lt;form&gt;</code> element looks like</p>
                 </section>
                 <section>
-                    <h4>dropdown</h4>
-                    <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/select-if2.html">here</a>
-                </section>-->
+                    <h4>HTML Forms</h4>
+                    <p>forms can contain different elements (components) some of which we will review in the next few slides</p>
+                </section>
+                <section>
+                    <h4><code>&lt;input&gt;</code></h4>
+                    <p>
+                        The things <code>&lt;input /&gt;</code> puts on the page <br/>
+                        are often called controls or widgets;
+                    </p>
+                </section>
+                <section>
+                    <h4>different types in <code>&lt;input&gt;</code></h4>
+                    <ul>
+                        <li><code>text</code></li>
+                        <li><code>button</code></li>
+                        <li><code>radio</code> buttons (select one of many options)</li>
+                        <li><code>checkbox</code> (check on or off)</li>
+                        <li><code>password</code> input <br/>(like text, but characters aren't visible on-screen)</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>different types in <code>&lt;input&gt;</code>: Example</h4>
+                    <div class="code-block">
+                        <code>
+                            &lt;p&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Type something: <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;text&quot; id=&quot;something&quot; /&gt; <br/>
+                            &lt;/p&gt;<br/>
+                            <hr/>
+                            &lt;p&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Here is <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;input type=&quot;button&quot; id=&quot;btn&quot; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;value=&quot;something to click&quot; /&gt;
+                            <br/>
+                            &lt;/p&gt;
+                            <br/>
+                            &lt;p&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;Here is <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;button id=&quot;btn&quot;&gt;something to click&lt;/button&gt;
+                            <br/>
+                            &lt;/p&gt;
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4><code>&lt;textarea&gt;</code></h4>
+                    <p>a text input where the user has space to enter more text</p>
+                    <div style="text-align: left">you can specify: <br/>
+                        <ul>
+                            <li>the number of rows and columns (lines and width)</li>
+                            <li>initial text as the contents (or leave it empty for none)</li>
+                        </ul>
+                    </div>
+                    <br/>
+                    <div class="code-block">
+                        <code>
+                            &lt;textarea id=&quot;t-area&quot; cols=&quot;30&quot; rows=&quot;5&quot;&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;This has lots of space for text. <br/>
+                            &lt;/textarea&gt;
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4><code>&lt;select&gt;</code> and <code>&lt;option&gt;</code></h4>
+                    <p>creates a drop-down list with the defined options</p>
+                    <div class="code-block block-7">
+                        <code>
+                            Choose one: <br/>
+                            &lt;select id=&quot;seldemo&quot;&gt; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value=&quot;a&quot;&gt;Apple&lt;/option&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value=&quot;b&quot;&gt;Banana&lt;/option&gt;<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&lt;option value=&quot;c&quot;&gt;Cherry&lt;/option&gt;<br/>
+                            &lt;/select&gt;
+                        </code>
+                    </div>
+                    <br/>
+                    <small><a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/select-if2.html">here</a> is an example of this element combined with the decision making syntax</small>
+                </section>
+                <section>
+                    <h4>jQuery and Forms: <code>.val()</code> function</h4>
+                    <p>we can then use jQuery <code>.val()</code> function to retrieve the value of an HTML form element</p>
+                    <div class="code-block" style="font-size: 0.6em !important;">
+                        <code>
+                            &lt;p&gt;Type something: &lt;input type=&quot;text&quot; id=&quot;something&quot; /&gt; <br/>
+                            &lt;button id=&quot;resultbutton&quot;&gt;Go&lt;/button&gt;&lt;/p&gt; <br/>
+                            &lt;p id=&quot;result&quot;&gt;&lt;/p&gt; <br/>
+                            <hr/>
+                            show_result = function() {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;typed = $('#something').val()<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;$('#result').html('You typed this: ' + typed)<br/>
+                            }<br/>
+                            setup = function() {<br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;$('#resultbutton').click(show_result)<br/>
+                            }<br/>
+                            $(document).ready(setup)
+                        </code>
+                    </div>
+                    <small>
+                        let's try this code <a
+                            href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/form2.html">here</a>
+                    </small>
+                </section>
+                <section>
+                    <h4>jQuery and Forms: Example</h4>
+                    <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/form-raph.html">here</a>
+                    is another example of using the <code>&lt;input&gt;</code> elements to modify a Rapha&euml;l paper object
+                </section>
                 <!--<section><aside class="notes"></aside></section>-->
 				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
 			</div>
