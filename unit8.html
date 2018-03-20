@@ -124,6 +124,79 @@
                             <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index">https://developer.mozilla.org/en-US/docs/Web/CSS/z-index</a></li>
                     </ul>
                 </section>
+                <section>
+                    <h4>Responsive Design</h4>
+                </section>
+                <section>
+                    <p>one of the difficult things about designing for the web <br/>
+                        is that we don't get to really control <br/>
+                        the way our content is viewed <br/><br/>
+                        the user's web browser is responsible for processing our HTML, CSS, and JavaScript
+                    </p>
+                </section>
+                <section>
+                    <p>when designing web pages, you should try to create <strong>responsive designs</strong> <br/>
+                        that is, make sure your pages are nicely readable on a wide variety of devices</p>
+                </section>
+                <section>
+                    <h4>Device Sizes</h4>
+                    <p>
+                        many beginners to web design make the mistake of only looking at their pages on their own screen, and never test on larger or smaller screens
+                        <br/><br/><strong>be careful not to fall into his trap</strong>
+                        <br/><br/>
+                        <small>let's check out <a
+                                href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/position.html">the positioning example</a> with different device sizes</small>
+                    </p>
+                </section>
+                <section>
+                    <h4>Testing Tips for Different Device Sizes</h4>
+                    <ul>
+                        <li>resize your browser window: not everybody has the same screen, or keeps their browser maximized</li>
+                        <li>shrink your browser window to a phone-like size to see how the elements of your page fit with smaller space
+                            <br/>even better: actually try the page on a smartphone</li>
+                        <li>try the largest browser window you can (and scale the page with <kbd>ctrl-minus</kbd>/<kbd>⌘-minus</kbd> and <kbd>ctrl-plus</kbd>/<kbd>⌘-plus</kbd> to get an even wider range), to make sure things are still readable</li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>Long Line Readability Problem</h4>
+                    <div>
+                        one common problem on larger screens is long lines <br/>
+                        lines of text that extend all the way across <br/>a large display are very difficult to read <br/>
+                        It may be wise to start with CSS like this,<br/> to help keep things readable:
+                        <div class="code-block block-5">
+                            <code>
+                                body { <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;max-width: 40em; <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;line-height: 1.4; <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;margin: 1em auto; <br/>
+                                &nbsp;&nbsp;&nbsp;&nbsp;color: #333; <br/>
+                                }
+                            </code>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h4>Being Mobile-Friendly</h4>
+                    when it comes to mobile browsers, <br/>
+                    they might get a beautiful mobile-friendly design, <br/>
+                    or they might have to display <br/>a desktop-only site as best they can, <br/>
+                    and have to detect which situation they're in
+
+                </section>
+                <section>
+                    <h4>Being Mobile-Friendly: <code>viewport</code> meta tag</h4>
+                    often, phone browsers will decide that <br/>
+                    your page isn't mobile-friendly and display it with a desktop-like width <br/>
+                    you can stop the mobile browser form doing that using: <br/><br/>
+                    <div class="code-block" style="font-size: 0.56em !important;">
+                        <code>
+                            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot; /&gt;
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <h4>Media Queries</h4>
+                </section>
                 <!--<section><aside class="notes"></aside></section>-->
 				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
 			</div>
