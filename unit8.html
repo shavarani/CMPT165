@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 8</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+        <link rel="stylesheet" href="css/presentation.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit8: More CSS</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+                        <li class="non-transparent">Positioning in CSS</li>
+                        <li class="semi-transparent">Responsive Design</li>
+                        <li class="semi-transparent">CSS Frameworks</li>
+                    </ol>
+				</section>
+                <section>
+                    <h4>what we are expected to know from CSS?</h4>
+                    <p>we know how to modify <br/><strong>fonts</strong>, <strong>colors</strong>, <strong>spacing</strong>, and <strong>borders</strong></p>
+                    <p>useful and necessary changes,<br/> but not the hard part of CSS !</p>
+                </section>
+                <section>
+                    <p>things become more interesting <br/> when you start moving stuff around the page !</p>
+                </section>
+                <section>
+                    <h4>Positioning Example</h4>
+                    <p>we will demonstrate different positioning tags <br/>using <a href="http://www.cs.sfu.ca/CourseCentral/165/common/study-guide/files/position.html">this</a> example </p>
+                </section>
+                <section>
+                    <h4>the <code>float</code> property</h4>
+                    <ul style="font-size: 0.8em">
+                        <li>it will take content and move it to the left or right sides of the page</li>
+                        <li>when floated content moves, whatever content follows it will move up, and flow around it</li>
+                        <li>let's look at the demo at <br/> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/float">https://developer.mozilla.org/en-US/docs/Web/CSS/float</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>the <code>clear</code> property</h4>
+                    <ul style="font-size: 0.7em">
+                        <li>it tells the browser that you want to move a piece of content down
+                            until there is nothing floating beside it, either to the left, right, or both sides</li>
+                        <li>let's look at the demo at <br/> <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear">https://developer.mozilla.org/en-US/docs/Web/CSS/clear</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>the <code>position</code> property</h4>
+                    <ul style="font-size: 0.7em">
+                        <li>it is both more <strong>powerful</strong> and more <strong>dangerous</strong> than <code>float</code> and <code>clear</code></li>
+                        <li>
+                            <span>
+                                different values:
+                                <ul>
+                                    <li><code>position: static</code> default value</li>
+                        <li>
+                            <code>position: relative</code> works like static but you can adjust the position of the element relative to where it would have naturally been
+                        </li>
+                        <li>
+                            <code>position: absolute</code> on an element lets you <br/>
+                            use the CSS properties <code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code>
+                        </li>
+                        <li>
+                            <code>position: fixed</code> is like absolute, but relative to the window (fixed things won't move as the user scrolls)
+                        </li>
+                                </ul>
+                            </span>
+                        </li>
+                        <li>let's look at the demo at <br/><a
+                                href="https://developer.mozilla.org/en-US/docs/Web/CSS/position">https://developer.mozilla.org/en-US/docs/Web/CSS/position</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>the <code>position</code> property problem</h4>
+                    <p>
+                        as soon as you start positioning content, <br/>
+                        it is taken <strong>out of the normal flow</strong> of content on the page <br/>
+                        and will overlap other content
+                    </p>
+                    <hr style="width: 75%"/>
+                    <p>
+                        you need to think of all of the possible ways your content can overlap on different devices and window sizes !
+                    </p>
+                </section>
+                <section>
+                    <h4>the <code>opacity</code> property</h4>
+                    <ul style="font-size: 0.7em">
+                        <li>specifies the level of transparency of elements</li>
+                        <li>let's look at the demo at <br/><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/opacity">
+                                https://developer.mozilla.org/en-US/docs/Web/CSS/opacity</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>the <code>z-index</code> property</h4>
+                    <ul style="font-size: 0.7em">
+                        <li>moves the figure behind (in front of) the other content</li>
+                        <li>let's look at the demo at <br/>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/z-index">https://developer.mozilla.org/en-US/docs/Web/CSS/z-index</a></li>
+                    </ul>
+                </section>
+                <!--<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
