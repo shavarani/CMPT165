@@ -37,8 +37,8 @@
 					<h3 style="border-bottom: 1px solid gray">Topics</h3>
 					<ol>
                         <li class="non-transparent">Positioning in CSS</li>
-                        <li class="semi-transparent">Responsive Design</li>
-                        <li class="semi-transparent">CSS Frameworks</li>
+                        <li class="non-transparent">Responsive Design</li>
+                        <li class="non-transparent">CSS Frameworks</li>
                     </ol>
 				</section>
                 <section>
@@ -125,6 +125,14 @@
                     </ul>
                 </section>
                 <section>
+                    <h4>the <code>display</code> property</h4>
+                    <ul style="font-size: 0.7em">
+                        <li>specifies the type of rendering box used for an element</li>
+                        <li>let's look at the demo at <br/>
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/display">https://developer.mozilla.org/en-US/docs/Web/CSS/display</a></li>
+                    </ul>
+                </section>
+                <section>
                     <h4>Responsive Design</h4>
                 </section>
                 <section>
@@ -196,6 +204,49 @@
                 </section>
                 <section>
                     <h4>Media Queries</h4>
+                    <p>assigning CSS properties based on screen size, screen type, screen orientation, ...</p>
+                    <p>as an example, they give us a way to express &quot;on a smaller screen, do this ...&quot; in CSS</p>
+
+                    <small>
+                        * for more examples lets look at <a
+                            href="https://www.w3schools.com/css/css_rwd_mediaqueries.asp">here</a>
+                        <br/>
+                        * and <a
+                            href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries#width">here</a> is the guide to use media queries
+                    </small>
+                </section>
+                <section>
+                    <h4>CSS Frameworks</h4>
+                    the more page layout you do with CSS, <br/>
+                    the more you're likely to run into things that <br/>
+                    are either <strong>difficult</strong> to do with CSS, or just <strong>tricky</strong> <br/><br/>
+                    <small>
+                        e.g.sometimes it is really hard to predict how different parts of your style will interact with each other
+                    </small>
+                </section>
+                <section>
+                    <h4>The Problem</h4>
+                    if the content of the pages changes, <br/>
+                    it can also be <strong>challenging to get a layout right</strong> on a wide variety of devices
+                </section>
+                <section>
+                    <h4>The Solution</h4>
+                    some pre-made code that solves common problems and can help us get things working more easily
+                    <br/><br/>
+                    <strong>CSS frameworks</strong> are pre-prepared stylesheet codes to serve our solution !
+                </section>
+                <section>
+                    <h4>Bootstrap</h4>
+                    the most popular CSS framework is <a href="https://getbootstrap.com/">Bootstrap</a>, which was originally created at Twitter for their site
+                    <br/> <br/>
+                    <div class="code-block" style="font-size: 0.45em !important;">
+                        <code>
+                            &lt;link rel=&quot;stylesheet&quot; <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;href=&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css&quot; /&gt;
+                            <br/>
+                            &lt;link rel=&quot;stylesheet&quot; href=&quot;bootstrap-changes.css&quot; /&gt;
+                        </code>
+                    </div>
                 </section>
                 <!--<section><aside class="notes"></aside></section>-->
 				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
