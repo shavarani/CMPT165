@@ -1,0 +1,273 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>CMPT 165 | Unit 9</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+        <link rel="stylesheet" href="css/presentation.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal titillium">
+			<div class="slides">
+				<section>
+					<h2>CMPT 165</h2>
+					<h4>Introduction to the Internet <br/>and the World Wide Web</h4>
+					<p>
+						<small>By <a href="https://shavarani.github.io/">Hassan S. Shavarani</a> </small>
+					</p>
+					<h5><i>Unit9: Dynamic HTML Programming</i></h5>
+				</section>
+				<section>
+					<h3 style="border-bottom: 1px solid gray">Topics</h3>
+					<ol>
+                        <li class="non-transparent">Bits and Transmitting Information</li>
+                        <li class="non-transparent">Server-side Programming</li>
+                    </ol>
+				</section>
+                <section><h4>Bits and Transmitting Information</h4></section>
+                <section>
+                    <h4>What Are Bits?</h4>
+                    <p>
+                        for any information to be transmitted over the network <br/>
+                        (or stored in your computer's memory or on its disks,) <br/>
+                        it must be encoded as a sequence of <strong>bits</strong>
+                    </p>
+                </section>
+                <section>
+                    <h4>What Are Bits?</h4>
+                    <ul>
+                        <li>Each bit can have one of two values, <br/>usually written as 0 and 1</li>
+                        <li>it will be something like <br/><em>&quot;an electrical pulse for 1 but none for 0&quot;</em></li>
+                    </ul>
+                </section>
+                <section>
+                    <h4>What Are Bits?</h4>
+                    <p>
+                        All of the information we can been working with has been turned into bits by our software
+                    </p>
+                    <p>
+                        e.g. PNG and JPEG formats specify (very different) ways to turn image data into a sequence of bits
+                    </p>
+                </section>
+                <section>
+                    <h4>Bits and Bytes</h4>
+                    <ul>
+                        <li>a <strong>bit</strong> is a single 0 or 1</li>
+                        <li>A <strong>byte</strong> is a sequence of eight bits</li>
+                    </ul>
+                    <p>
+                        <em>Byte</em> is often a more convenient unit to start with when talking about storing or transmitting information
+                    </p>
+                </section>
+                <section>
+                    <h4>What Are Bytes?</h4>
+                    <p>there are 28 = 256 possible bytes, usually taken to represent numbers 0–255</p>
+                    <p class="code-block block-5" style="text-align: center !important;">
+                        00000000 = 0 <br/>
+                        00000001 = 1 <br/>
+                        00000010 = 2 <br/>
+                        00000011 = 3 <br/>
+                        00000100 = 4 <br/>
+                        ⋮ <br/>
+                        11111111 = 255 <br/>
+                    </p>
+                </section>
+                <section>
+                    <h4>Bits and Bytes</h4>
+                    2<sup>n</sup> is the number of unique values that can be represented by <em>n</em> bits
+                    <p style="font-size: 0.7em">
+                        A kilobit and kilobyte(kb and kB) is 2<sup>10</sup>= 1,024 bits and bytes <br/>
+                        A megabit and megabyte (Mb and MB) are 2<sup>20</sup> = 1,048,576 bits and bytes <br/>
+                        A gigabit and gigabyte (Gb and GB) are 2<sup>30</sup> = 1,073,741,824 bits and bytes <br/>
+                    </p>
+                </section>
+                <section>
+                   <p>
+                       we have stored and transmitted characters frequently<br/>
+                       HTML, CSS, and JavaScript are all just <br/><strong>characters stored in a text file</strong>
+                   </p>
+                    <p style="font-size: 0.9em">these have been sent from server to client for all of our pages</P>
+                </section>
+                <section>
+                    <h4>Encoding Characters</h4>
+                    <ul style="font-size: 0.9em">
+                        <li>characters must be encoded as bits to be able to be sent through internet</li>
+                        <li>client and server agree on this encoding</li>
+                    </ul>
+                    <img src="http://www.hanselman.com/blog/content/binary/Windows-Live-Writer/a1b45c8e0300_B19B/photo%203.jpg"
+                         alt="Obama Tweet" width="500px">
+                    <small>
+                        * Image from http://www.hanselman.com/blog/content/binary/Windows-Live-Writer
+                    </small>
+                </section>
+                <section>
+                    <h4>Character Encoding</h4>
+                    <p>a way to encode the character numbers into bits <br/>
+                        there are several character encodings for Unicode character set (about 120,000 characters)<br/>
+                    </p>
+                    <p style="font-size: 0.9em">for example, in Unicode &ldquo;A&rdquo; is character number 65,
+                        and &ldquo;&euro;&rdquo; is 8364 (so you can produce &euro; in HTML with &amp;#8364;)</p>
+                    <p>
+                        the choice for web pages is easy: use <strong><a href="https://en.wikipedia.org/wiki/UTF-8">UTF-8</a></strong></p>
+                    <div class="code-block block-5"><code>&lt;meta charset=&quot;UTF-8&quot; /&gt;</code></div>
+                </section>
+
+                <section><h4>Server-side Programming</h4></section>
+                <section>
+                    <p>
+                        we have learned how to construct web pages,<br/>
+                        make them look the way we want, <br/>
+                        and give them behaviour
+                    </p>
+                </section>
+                <section>
+                    <h4>Job of Web-Server</h4>
+                    <div>
+                        <p style="text-align: left">the job of the web server is very simple</p>
+                        <ul>
+                            <li>find the <code>.html</code> file which is put on the server <br/></li>
+                            <li>send the file out as-is to web browsers</li>
+                        </ul>
+                    </div>
+                </section>
+                <section>
+                    <h4>Webpage Generation/Update Problem</h4>
+                    <p>
+                        can we modify the HTML code for adding every single piece of news on the news feed?
+                    </p>
+                    <p>
+                        can we change the HTML code after each comment a user adds under a post?
+                    </p>
+                    <p>
+                        can we have a prepared HTML file for every possible search keyword that could come to your mind to ask from Google?
+                    </p>
+                </section>
+                <section>
+                    <h4>How to modify the <code>.html</code> files</h4>
+                    <p>
+                        we have been able to modify the HTML page with code we have written,
+                        but that was all JavaScript code that runs in the web browser
+                    </p>
+                    <p>
+                        there was never any change in the <code>.html</code> file sent from the server to the browser
+                    </p>
+                </section>
+                <section>
+                    <h4>Static vs. Dynamic Webpages</h4>
+                    <dl>
+                        <dt><strong>static web pages</strong></dt>
+                        <dd>webpages that come from <code>.html</code> files on the server</dd>
+                        <dt><strong>dynamic web pages</strong></dt>
+                        <dd>webpages that are created as they are requested</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h4>Client-side vs. Server-side Programming</h4>
+                    <dl>
+                    <dt><strong>client-side programming</strong></dt>
+                    <dd>the programming we have been doing in JavaScript <br/>(the programs run in the user's web browser)</dd>
+                    <dt><strong>server-side programming</strong></dt>
+                    <dd>writing programs to create dynamic pages <br/>(the programs run on the web server)</dd>
+                    </dl>
+                </section>
+                <section>
+                    <h4>Server-side Programming</h4>
+                    <p>
+                        server-side programs are often written in <br/>
+                        Python, Ruby, PHP, Java, or C# <br/>
+                    </p>
+                    <p>
+                        JavaScript is also a common choice<br/>
+                        since most web developers already know it
+                    </p>
+                </section>
+                <section>
+                    <h4>Server-Side JavaScript</h4>
+                    <p>
+                        there exists a long list of different libraries <br/> to be used for server-side JavaScripting <br/>[
+                        <a href="https://en.wikipedia.org/wiki/List_of_server-side_JavaScript_implementations">you can check the list here</a>]
+                    </p>
+
+                    <p>
+                        <a href="https://nodejs.org/en/">Node.js</a> is one of the most common server-side JavaScripting libraries
+                    </p>
+                </section>
+                <section>
+                    <h4>Server-Side JavaScript: Node.js Example</h4>
+                    <div class="code-block" style="font-size: 0.6em !important;">
+                        <code>
+                            var http = require('http'); <br/>
+                            var server = http.createServer(function(req, res) { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;res.setHeader('Content-type', 'text/html'); <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;res.writeHead(200); <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;res.write('&lt;!DOCTYPE html&gt;\n'); <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;res.write('&lt;html&gt;&lt;head&gt;&lt;meta charset=&quot;UTF-8&quot; /&gt;\n'); <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;res.write('&lt;title&gt;Node.js app&lt;/title&gt;&lt;/head&gt;&lt;body&gt;\n'); <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;res.write('&lt;p&gt;This is a page generated by Node.js.&lt;/p&gt;\n'); <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;for ( i=1; i&lt;=10; i+=1 ) { <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;res.write('&lt;p&gt;Another paragraph. ' + i + '&lt;/p&gt;\n'); <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;} <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;res.write('&lt;/body&gt;&lt;/html&gt;\n'); <br/>
+                            &nbsp;&nbsp;&nbsp;&nbsp;res.end(); <br/>
+                            }); <br/>
+                            server.listen(8080);
+                        </code>
+                    </div>
+                    <small>
+                        you can try this example <a href="examples/server.js">here</a>!
+                    </small>
+                </section>
+                <section>
+                    You can start learning about Node.js library in
+                    <a href="https://www.w3schools.com/nodejs/default.asp">here</a>
+                </section>
+                <!--<section><aside class="notes"></aside></section>-->
+				<section><a href="https://shavarani.github.io/cmpt165/">Any Questions?</a></section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // More info https://github.com/hakimel/reveal.js#dependencies
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/search/search.js', async: true },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+            Reveal.configure({ slideNumber: true });
+            Reveal.configure({ slideNumber: 'c/t' });
+            //Reveal.configure({ showSlideNumber: 'speaker'});
+		</script>
+	</body>
+</html>
