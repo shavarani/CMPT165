@@ -103,5 +103,5 @@ server.listen(8080);
 
 - Run your code (server.js) with this command:   node --inspect-brk index.js
 - Open this url (about:inspect) in Chrome
-
+- For more info look at (https://nodejs.org/en/docs/guides/debugging-getting-started/)
 ===============================================================================
