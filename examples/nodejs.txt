@@ -98,4 +98,10 @@ var server = http.createServer(function(req, res) {
     res.end(); 
 }); 
 server.listen(8080);
+
+--------------------5. Let's Debug Node.js-------------------------------------
+
+- Run your code (server.js) with this command:   node --inspect-brk index.js
+- Open this url (about:inspect) in Chrome
+
 ===============================================================================
