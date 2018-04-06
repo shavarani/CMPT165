@@ -8,6 +8,8 @@
 
 - Node.js URL Module: https://www.w3schools.com/nodejs/nodejs_url.asp
 
+- Node.js Events Module: https://www.w3schools.com/nodejs/nodejs_events.asp
+
 - List of Built-in Node modules: https://www.w3schools.com/nodejs/ref_modules.asp
 
 ---------------------1. Let's Send Static Files--------------------------------
@@ -15,30 +17,40 @@
 var http = require('http');
 
 var fs = require('fs');
+
+var EventEmitter = require("events").EventEmitter;
+
 var htmlFile;
 var cssFile;
 
-fs.readFile('./AppClient.html', function(err, data) {
+fs.readFile('./index.html', function(err, data) {
     if (err){
         throw err;
     }
     htmlFile = data;
 });
 
-fs.readFile('./AppClientStyle.css', function(err, data) {
+fs.readFile('./index.css', function(err, data) {
     if (err){
         throw err;
     }
     cssFile = data;
 });
 
+var ee = new EventEmitter();
+ee.on("register", function () {
+    console.log("registering new user");
+});
+
 var server = http.createServer(function (request, response) {
-    switch (request.url) {
-        case "/AppClientStyle.css" :
+    if (request.url == "register") {
+        ee.emit("register");
+    }
+    if (request.url == "index.css") {
             response.writeHead(200, {"Content-Type": "text/css"});
             response.write(cssFile);
             break;
-        default :    
+    } else {
             response.writeHead(200, {"Content-Type": "text/html"});
             response.write(htmlFile);
     });
@@ -104,4 +116,74 @@ server.listen(8080);
 - Run your code (server.js) with this command:   node --inspect-brk index.js
 - Open this url (about:inspect) in Chrome
 - For more info look at (https://nodejs.org/en/docs/guides/debugging-getting-started/)
+
+====================6. A complete project=======================================
+
+var http = require('http');
+var fs = require('fs');
+var url = require('url');
+var EventEmitter = require("events").EventEmitter;
+var querystring = require('querystring');
+
+var htmlFile;
+var cssFile;
+var htmldata = '<html><head>    <title>Served by node.js</title>    <meta charset="utf-8"/> <link rel="stylesheet" type="text/css" href="index.css">    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script> <script type="text/javascript">     var sendit = function(){            var name = $("#name").val();            console.log(name);          $.get("register?name="+name, function(data) {               $("#result").html(data);            });     }   </script></head><body>  <div id="inputs">   <input type="text" id="name"/>  <input type="button" value="Register" onclick="sendit()">   </div>  <div id="result"></div></body></html>';
+var cssdata = 'body {   background-color: #dde;}#result {   border: 1px dashed gray;}#inputs, #result{  margin: 5% auto;    width: 25%;}';
+var loadFiles = false;
+
+if (loadFiles){
+    fs.readFile('index.html', function(err, data) {
+        if (err){
+            throw err;
+        }
+        htmlFile = data;
+    });
+} else {
+    htmlFile = htmldata
+}
+
+if (loadFiles){
+    fs.readFile('index.css', function(err, data) {
+        if (err){
+            throw err;
+        }
+        cssFile = data;
+    });
+} else {
+    cssFile = cssdata;
+}
+
+var ee = new EventEmitter();
+ee.on("register", function (name) {
+    console.log("registering new user: "+name);
+});
+
+var server = http.createServer(function (request, response) {
+    var parsed = url.parse(request.url);
+    var params = querystring.parse(parsed.query);
+    console.log("Resource requested: "+parsed.pathname)
+    if (parsed.pathname == "/register") {
+        ee.emit("register", params.name);
+        response.write("register successful for "+params.name);
+    }
+    else if (parsed.pathname == "/index.css") {
+        response.writeHead(200, {"Content-Type": "text/css"});
+        response.write(cssFile);
+    } else if (parsed.pathname == "/favicon.ico") {
+        response.writeHead(200, {"Content-Type": "image/x-icon"});
+        response.write("");
+    } else if (parsed.pathname == "/"){
+        response.writeHead(200, {"Content-Type": "text/html"});
+        response.write(htmlFile);
+    } else {
+        console.log("Resource not available");
+    }
+    response.end();
+});
+
+var port = 8080;
+var host = '127.0.0.1';
+server.listen(port, host);
+console.log('Now listening on port ' + port);
+
 ===============================================================================
